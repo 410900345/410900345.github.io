@@ -418,7 +418,7 @@ sudo gem install cocoapods    指定版本追加(-v 0.39) 安装
     <entry>
       <title><![CDATA[git使用技巧]]></title>
       <url>https://sukeyang.github.io/2016/07/20/git%E4%BD%BF%E7%94%A8/</url>
-      <content type="html"><![CDATA[<h3 id="ssh-key的作用"><a href="#ssh-key的作用" class="headerlink" title="ssh-key的作用"></a>ssh-key的作用</h3><p>我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，<br>也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。</p>
+      <content type="html"><![CDATA[<h2 id="ssh-key的作用"><a href="#ssh-key的作用" class="headerlink" title="ssh-key的作用"></a>ssh-key的作用</h2><p>我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，<br>也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。</p>
 <h2 id="解决本地多个ssh-key的配置"><a href="#解决本地多个ssh-key的配置" class="headerlink" title="解决本地多个ssh-key的配置"></a>解决本地多个ssh-key的配置</h2><p>1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.work</span> -C <span class="string">"Key for Work"</span>  </div><div class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.github</span> -C <span class="string">"Key for GitHub"</span></div></pre></td></tr></table></figure>
 <p>在 <code>~/.ssh/config</code> 目录内修改文件config</p>
@@ -586,14 +586,14 @@ hexo server （或hexo s）
     
     <entry>
       <title></title>
-      <url>https://sukeyang.github.io/baidu_verify_U46qrtfJuH.html</url>
-      <content type="html"><![CDATA[U46qrtfJuH]]></content>
+      <url>https://sukeyang.github.io/googlee7b1aeaf649970a2.html</url>
+      <content type="html"><![CDATA[google-site-verification: googlee7b1aeaf649970a2.html]]></content>
     </entry>
     
     <entry>
       <title></title>
-      <url>https://sukeyang.github.io/googlee7b1aeaf649970a2.html</url>
-      <content type="html"><![CDATA[google-site-verification: googlee7b1aeaf649970a2.html]]></content>
+      <url>https://sukeyang.github.io/baidu_verify_U46qrtfJuH.html</url>
+      <content type="html"><![CDATA[U46qrtfJuH]]></content>
     </entry>
     
     <entry>

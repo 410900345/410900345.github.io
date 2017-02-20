@@ -21,7 +21,7 @@
 <meta property="og:description" content="ssh-key的作用我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。
 解决本地多个ssh-key的配置1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件
 12ssh-keygen -t rsa -f ~/.ssh/id_rsa.work -C &quot;Key for Work&quot;  ssh-">
-<meta property="og:updated_time" content="2017-02-20T14:05:26.000Z">
+<meta property="og:updated_time" content="2017-02-20T14:11:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用技巧">
 <meta name="twitter:description" content="ssh-key的作用我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。
@@ -105,11 +105,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh-key的作用"><span class="toc-number">1.</span> <span class="toc-text">ssh-key的作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决本地多个ssh-key的配置"><span class="toc-number"></span> <span class="toc-text">解决本地多个ssh-key的配置</span></a>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh-key的作用"><span class="toc-number">1.</span> <span class="toc-text">ssh-key的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决本地多个ssh-key的配置"><span class="toc-number">2.</span> <span class="toc-text">解决本地多个ssh-key的配置</span></a></li></ol>
 		
 		</div>
 		
-		<h3 id="ssh-key的作用"><a href="#ssh-key的作用" class="headerlink" title="ssh-key的作用"></a>ssh-key的作用</h3><p>我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，<br>也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。</p>
+		<h2 id="ssh-key的作用"><a href="#ssh-key的作用" class="headerlink" title="ssh-key的作用"></a>ssh-key的作用</h2><p>我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，<br>也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。</p>
 <h2 id="解决本地多个ssh-key的配置"><a href="#解决本地多个ssh-key的配置" class="headerlink" title="解决本地多个ssh-key的配置"></a>解决本地多个ssh-key的配置</h2><p>1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.work</span> -C <span class="string">"Key for Work"</span>  </div><div class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.github</span> -C <span class="string">"Key for GitHub"</span></div></pre></td></tr></table></figure>
 <p>在 <code>~/.ssh/config</code> 目录内修改文件config</p>
@@ -123,7 +123,9 @@
 <p>解决办法：在命令行输入chmod 700 id_rsa.github即可。这里“id_rsa.githu”就是warning里给出的密钥文件名。</p>
   
 
-		    <div name="dashmain" id="dash-main-id-878fd6" class="dash-main-3 878fd6-5" style="margin: 0 auto;"></div><script type="text/javascript" charset="utf-8" src="http://www.dashangcloud.com/static/ds.js"></script>
+		 <div width="100%" align="center" align="center">
+	<a href="http://www.dashangcloud.com/sh/878fe4"><img width="32" src="http://www.dashangcloud.com/static/ds-logo-1.2-64.png"/></a>
+</div>
 
 	</div>
 		<footer class="article-footer clearfix">
@@ -185,7 +187,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh-key的作用"><span class="toc-number">1.</span> <span class="toc-text">ssh-key的作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决本地多个ssh-key的配置"><span class="toc-number"></span> <span class="toc-text">解决本地多个ssh-key的配置</span></a>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ssh-key的作用"><span class="toc-number">1.</span> <span class="toc-text">ssh-key的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决本地多个ssh-key的配置"><span class="toc-number">2.</span> <span class="toc-text">解决本地多个ssh-key的配置</span></a></li></ol>
  
   </div>
 
