@@ -609,9 +609,11 @@ id: ## 这里填写前面记下的 Swiftype id
     <link href="https://sukeyang.github.io/2016/06/04/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     <id>https://sukeyang.github.io/2016/06/04/博客搭建/</id>
     <published>2016-06-04T08:40:33.000Z</published>
-    <updated>2017-02-20T12:00:53.000Z</updated>
+    <updated>2017-02-20T14:36:27.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="安装配置环境"><a href="#安装配置环境" class="headerlink" title="安装配置环境"></a>安装配置环境</h3><p>1.安装Node.js,<a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs官网</a></p>
+    <content type="html"><![CDATA[<h3 id="安装配置环境"><a href="#安装配置环境" class="headerlink" title="安装配置环境"></a>安装配置环境</h3><p>1.安装Node.js,<a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs官网</a>，更换为<a href="http://npm.taobao.org" target="_blank" rel="external">淘宝的npm源</a></p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> install cnpm -g --registry=https:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org</div></pre></td></tr></table></figure>
+<p><code>注</code>：cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm（以下操作将以cnpm代替npm）</p>
 <p>2.安装hexo </p>
 <pre><code>sudo npm install hexo-cli -g
 </code></pre><p>3.初始化Hexo</p>
@@ -679,7 +681,9 @@ hexo server （或hexo s）
     
     <summary type="html">
     
-      &lt;h3 id=&quot;安装配置环境&quot;&gt;&lt;a href=&quot;#安装配置环境&quot; class=&quot;headerlink&quot; title=&quot;安装配置环境&quot;&gt;&lt;/a&gt;安装配置环境&lt;/h3&gt;&lt;p&gt;1.安装Node.js,&lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Nodejs官网&lt;/a&gt;&lt;/p&gt;
+      &lt;h3 id=&quot;安装配置环境&quot;&gt;&lt;a href=&quot;#安装配置环境&quot; class=&quot;headerlink&quot; title=&quot;安装配置环境&quot;&gt;&lt;/a&gt;安装配置环境&lt;/h3&gt;&lt;p&gt;1.安装Node.js,&lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Nodejs官网&lt;/a&gt;，更换为&lt;a href=&quot;http://npm.taobao.org&quot;&gt;淘宝的npm源&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight coffeescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;npm&lt;/span&gt; install cnpm -g --registry=https:&lt;span class=&quot;regexp&quot;&gt;//&lt;/span&gt;registry.&lt;span class=&quot;built_in&quot;&gt;npm&lt;/span&gt;.taobao.org&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;注&lt;/code&gt;：cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm（以下操作将以cnpm代替npm）&lt;/p&gt;
 &lt;p&gt;2.安装hexo &lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo npm install hexo-cli -g
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.初始化Hexo&lt;/p&gt;

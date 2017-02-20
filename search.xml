@@ -506,7 +506,9 @@ id: ## 这里填写前面记下的 Swiftype id
     <entry>
       <title><![CDATA[GitHub + Hexo 搭建博客总结(一)]]></title>
       <url>https://sukeyang.github.io/2016/06/04/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-      <content type="html"><![CDATA[<h3 id="安装配置环境"><a href="#安装配置环境" class="headerlink" title="安装配置环境"></a>安装配置环境</h3><p>1.安装Node.js,<a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs官网</a></p>
+      <content type="html"><![CDATA[<h3 id="安装配置环境"><a href="#安装配置环境" class="headerlink" title="安装配置环境"></a>安装配置环境</h3><p>1.安装Node.js,<a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs官网</a>，更换为<a href="http://npm.taobao.org" target="_blank" rel="external">淘宝的npm源</a></p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> install cnpm -g --registry=https:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org</div></pre></td></tr></table></figure>
+<p><code>注</code>：cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm（以下操作将以cnpm代替npm）</p>
 <p>2.安装hexo </p>
 <pre><code>sudo npm install hexo-cli -g
 </code></pre><p>3.初始化Hexo</p>
