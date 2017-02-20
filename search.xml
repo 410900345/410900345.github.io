@@ -9,9 +9,9 @@
       <content type="html"><![CDATA[<p>   最近在折腾weex,不过升级到vue2.0出现了一些问题,现在记录使用情况,暂时有一些问题没有解决,官方的链接:<br><a href="https://github.com/alibaba/weex" target="_blank" rel="external">weex官方github</a>   </p>
 <p><a href="https://github.com/weexteam/weex-devtool-iOS/blob/master/README-zh.md" target="_blank" rel="external">weex-devtool-iOS</a></p>
 <p><a href="https://github.com/weexteam/weex-hackernews/" target="_blank" rel="external">weexteam-demo</a></p>
-<p>###基本介绍<br>1.安装环境,nodejs,下面是一些常用的命令.</p>
+<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>1.安装环境,nodejs,下面是一些常用的命令.</p>
 <p>IDE: Sublime Text + <a href="https://github.com/vuejs/vue-syntax-highlight" target="_blank" rel="external">vue-syntax-highlight</a></p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> install</div><div class="line"><span class="built_in">npm</span> install -g weex-toolkit@beta</div><div class="line"><span class="built_in">npm</span> run build</div><div class="line"><span class="built_in">npm</span> run copy:ios</div></pre></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> install</div><div class="line">sudo <span class="built_in">npm</span> install -g weex-toolkit@beta</div><div class="line"><span class="built_in">npm</span> run build</div><div class="line"><span class="built_in">npm</span> run copy:ios</div></pre></td></tr></table></figure>
 <p>2.开启服务</p>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">run</span><span class="bash"> serve</span></div></pre></td></tr></table></figure>
 <p>3.开启debug,自动弹出页面</p>
