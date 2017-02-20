@@ -58,39 +58,17 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2016/08/02/CocoaPods%E5%AE%89%E8%A3%85/</loc>
+    <loc>https://sukeyang.github.io/2016/12/15/ReactNative%E9%94%99%E8%AF%AF%E6%94%B6%E9%9B%86%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2017-02-20T12:00:53.000Z</lastmod>
     <data>
         <display>
-        <title>iOS CocoaPods安装使用错误记录</title>
-        <pubTime>2016-08-02T08:40:33.000Z</pubTime>
-        
-        <tag>tools</tag>
-         
-        <tag>效率</tag>
-         
-         
-           
-             
-              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2016/09/06/Link%20Binary%20With/</loc>
-    <lastmod>2017-02-20T12:00:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>Xcode中Link Binary With Libraries Status Required or Optional</title>
-        <pubTime>2016-09-06T04:00:58.000Z</pubTime>
+        <title>ReactNative错误收集问题</title>
+        <pubTime>2016-12-15T02:47:26.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="ios" url="https://sukeyang.github.io/categories/ios/"/>
+              <breadCrumb title="BFE" url="https://sukeyang.github.io/categories/BFE/"/>
           
         </display>
     </data>
@@ -109,6 +87,24 @@
            
              
               <breadCrumb title="ios" url="https://sukeyang.github.io/categories/ios/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2017/02/06/2016%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2017-02-20T12:00:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>2016总结</title>
+        <pubTime>2017-02-06T04:00:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="技巧" url="https://sukeyang.github.io/categories/%E6%8A%80%E5%B7%A7/"/>
           
         </display>
     </data>
@@ -170,17 +166,21 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2016/12/15/ReactNative%E9%94%99%E8%AF%AF%E6%94%B6%E9%9B%86%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://sukeyang.github.io/2016/08/02/CocoaPods%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2017-02-20T12:00:53.000Z</lastmod>
     <data>
         <display>
-        <title>ReactNative错误收集问题</title>
-        <pubTime>2016-12-15T02:47:26.000Z</pubTime>
+        <title>iOS CocoaPods安装使用错误记录</title>
+        <pubTime>2016-08-02T08:40:33.000Z</pubTime>
         
+        <tag>tools</tag>
+         
+        <tag>效率</tag>
+         
          
            
              
-              <breadCrumb title="BFE" url="https://sukeyang.github.io/categories/BFE/"/>
+              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
           
         </display>
     </data>
@@ -188,17 +188,17 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2017/02/06/2016%E6%80%BB%E7%BB%93/</loc>
+    <loc>https://sukeyang.github.io/2016/09/06/Link%20Binary%20With/</loc>
     <lastmod>2017-02-20T12:00:53.000Z</lastmod>
     <data>
         <display>
-        <title>2016总结</title>
-        <pubTime>2017-02-06T04:00:58.000Z</pubTime>
+        <title>Xcode中Link Binary With Libraries Status Required or Optional</title>
+        <pubTime>2016-09-06T04:00:58.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="技巧" url="https://sukeyang.github.io/categories/%E6%8A%80%E5%B7%A7/"/>
+              <breadCrumb title="ios" url="https://sukeyang.github.io/categories/ios/"/>
           
         </display>
     </data>
