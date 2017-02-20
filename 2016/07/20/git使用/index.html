@@ -4,26 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>使用Sublime Text 进行Markdown 编辑 | SukeYang的博客</title>
+    <title>git使用技巧 | SukeYang的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SukeYang">
     
 
     
-    <meta name="description" content="安装包管理器同时按下ctrl+”`”,将会在窗口底部出现一个小控制台，下面代码粘贴到控制台的编辑栏里：
-1import urllib.request,os; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.re">
+    <meta name="description" content="ssh-key的作用我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。
+解决本地多个ssh-key的配置1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件
+12ssh-keygen -t rsa -f ~/.ssh/id_rsa.work -C &quot;Key for Work&quot;  ssh-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Sublime Text 进行Markdown 编辑">
-<meta property="og:url" content="https://sukeyang.github.io/2016/12/18/使用SublimeText进行Markdown编辑/index.html">
+<meta property="og:title" content="git使用技巧">
+<meta property="og:url" content="https://sukeyang.github.io/2016/07/20/git使用/index.html">
 <meta property="og:site_name" content="SukeYang的博客">
-<meta property="og:description" content="安装包管理器同时按下ctrl+”`”,将会在窗口底部出现一个小控制台，下面代码粘贴到控制台的编辑栏里：
-1import urllib.request,os; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.re">
-<meta property="og:updated_time" content="2017-02-20T13:17:06.000Z">
+<meta property="og:description" content="ssh-key的作用我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。
+解决本地多个ssh-key的配置1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件
+12ssh-keygen -t rsa -f ~/.ssh/id_rsa.work -C &quot;Key for Work&quot;  ssh-">
+<meta property="og:updated_time" content="2017-02-20T13:43:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Sublime Text 进行Markdown 编辑">
-<meta name="twitter:description" content="安装包管理器同时按下ctrl+”`”,将会在窗口底部出现一个小控制台，下面代码粘贴到控制台的编辑栏里：
-1import urllib.request,os; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.re">
+<meta name="twitter:title" content="git使用技巧">
+<meta name="twitter:description" content="ssh-key的作用我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。
+解决本地多个ssh-key的配置1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件
+12ssh-keygen -t rsa -f ~/.ssh/id_rsa.work -C &quot;Key for Work&quot;  ssh-">
 
     
     <link rel="alternative" href="/atom.xml" title="SukeYang的博客" type="application/atom+xml">
@@ -86,14 +89,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/12/18/使用SublimeText进行Markdown编辑/" title="使用Sublime Text 进行Markdown 编辑" itemprop="url">使用Sublime Text 进行Markdown 编辑</a>
+      <a href="/2016/07/20/git使用/" title="git使用技巧" itemprop="url">git使用技巧</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SukeYang" target="_blank" itemprop="author">SukeYang</a>
 		
   <p class="article-time">
-    <time datetime="2016-12-18T07:36:25.000Z" itemprop="datePublished"> 发表于 2016-12-18</time>
+    <time datetime="2016-07-20T01:55:28.000Z" itemprop="datePublished"> 发表于 2016-07-20</time>
     
   </p>
 </header>
@@ -102,17 +105,22 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装包管理器"><span class="toc-number">1.</span> <span class="toc-text">安装包管理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装我们要用到的插件"><span class="toc-number">2.</span> <span class="toc-text">安装我们要用到的插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件配置"><span class="toc-number">3.</span> <span class="toc-text">插件配置</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh-key的作用"><span class="toc-number">1.</span> <span class="toc-text">ssh-key的作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决本地多个ssh-key的配置"><span class="toc-number"></span> <span class="toc-text">解决本地多个ssh-key的配置</span></a>
 		
 		</div>
 		
-		<h2 id="安装包管理器"><a href="#安装包管理器" class="headerlink" title="安装包管理器"></a>安装包管理器</h2><p>同时按下ctrl+”`”,将会在窗口底部出现一个小控制台，下面代码粘贴到控制台的编辑栏里：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request,os; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); <span class="built_in">open</span>(os.path.join(ipp, pf), <span class="string">'wb'</span>).<span class="built_in">write</span>(urllib.request.urlopen( <span class="string">'http://sublime.wbond.net/'</span> + pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="built_in">read</span>())</div></pre></td></tr></table></figure>
-<p>安装不上的问题，<a href="https://packagecontrol.io/installation" target="_blank" rel="external">看官方办法</a></p>
-<h2 id="安装我们要用到的插件"><a href="#安装我们要用到的插件" class="headerlink" title="安装我们要用到的插件"></a>安装我们要用到的插件</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Markdown </span>Editing // <span class="keyword">Markdown编辑和语法高亮支持 </span></div><div class="line"><span class="keyword">Markdown </span>Preview// <span class="keyword">Markdown导出html预览支持</span></div></pre></td></tr></table></figure>
-<h2 id="插件配置"><a href="#插件配置" class="headerlink" title="插件配置"></a>插件配置</h2><p>1.在设置里面Sublime Text – &gt;preference–&gt; key bunding user     输入</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    &#123;<span class="attr">"keys"</span>: [<span class="string">"alt+r"</span>], <span class="attr">"command"</span>: <span class="string">"markdown_preview"</span>, <span class="attr">"args"</span>: &#123; <span class="attr">"target"</span>: <span class="string">"browser"</span>&#125;&#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<p>然后按住alt + r ，预览你编辑的文件吧。</p>
+		<h3 id="ssh-key的作用"><a href="#ssh-key的作用" class="headerlink" title="ssh-key的作用"></a>ssh-key的作用</h3><p>我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，<br>也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。</p>
+<h2 id="解决本地多个ssh-key的配置"><a href="#解决本地多个ssh-key的配置" class="headerlink" title="解决本地多个ssh-key的配置"></a>解决本地多个ssh-key的配置</h2><p>1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.work</span> -C <span class="string">"Key for Work"</span>  </div><div class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.github</span> -C <span class="string">"Key for GitHub"</span></div></pre></td></tr></table></figure>
+<p>在 <code>~/.ssh/config</code> 目录内修改文件config</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Host *<span class="selector-class">.workdomain</span><span class="selector-class">.com</span>   </div><div class="line">  </div><div class="line">    IdentityFile ~/.ssh/id_rsa<span class="selector-class">.work</span>  </div><div class="line">    User lee  </div><div class="line">   </div><div class="line">Host github<span class="selector-class">.com</span>  </div><div class="line">    IdentityFile ~/.ssh/id_rsa<span class="selector-class">.github</span>  </div><div class="line">    User git</div></pre></td></tr></table></figure>
+<p>用下面的命令测试一下</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span></div></pre></td></tr></table></figure>
+<p>返回成功</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi sukeyang! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</div></pre></td></tr></table></figure>
+<p>1.提示 WARNING: UNPROTECTED PRIVATE KEY FILE!  </p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@</span></div><div class="line">@         WARNING: UNPROTECTED PRIVATE <span class="built_in">KEY</span> FILE!          <span class="comment">@</span></div><div class="line">@<span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span></div><div class="line">Permissions <span class="number">0644</span> <span class="keyword">for</span> '/Users/yangshuo/.ssh/winid_rsa' are too <span class="keyword">open</span>.</div><div class="line">It is required that your private <span class="built_in">key</span> files are <span class="keyword">NOT</span> accessible by others.</div><div class="line">This private <span class="built_in">key</span> will be ignored.</div></pre></td></tr></table></figure>
+<p>解决办法：在命令行输入chmod 700 id_rsa.githu即可。这里“id_rsa.githu”就是warning里给出的密钥文件名。</p>
   
 
 	<div width="100%" align="center" align="center">
@@ -135,7 +143,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://sukeyang.github.io/2016/12/18/使用SublimeText进行Markdown编辑/" data-title="使用Sublime Text 进行Markdown 编辑 | SukeYang的博客" data-tsina="1720383823" class="share clearfix">
+	  <div data-url="https://sukeyang.github.io/2016/07/20/git使用/" data-title="git使用技巧 | SukeYang的博客" data-tsina="1720383823" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -149,18 +157,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/02/06/2016总结/" title="2016总结">
+ <a href="/2016/08/02/CocoaPods安装/" title="iOS CocoaPods安装使用错误记录">
   <strong>上一篇：</strong><br/>
   <span>
-  2016总结</span>
+  iOS CocoaPods安装使用错误记录</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/12/15/ReactNative错误收集问题/"  title="ReactNative错误收集问题">
+<a href="/2016/07/03/部分App更新无法联网/"  title="升级iOS10后，部分App更新之后无法联网怎么办？">
  <strong>下一篇：</strong><br/> 
- <span>ReactNative错误收集问题
+ <span>升级iOS10后，部分App更新之后无法联网怎么办？
 </span>
 </a>
 </div>
@@ -169,7 +177,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/12/18/使用SublimeText进行Markdown编辑/" data-title="使用Sublime Text 进行Markdown 编辑" data-url="https://sukeyang.github.io/2016/12/18/使用SublimeText进行Markdown编辑/"></div>
+	<div class="ds-thread" data-thread-key="2016/07/20/git使用/" data-title="git使用技巧" data-url="https://sukeyang.github.io/2016/07/20/git使用/"></div>
 </section>
 
 
@@ -179,7 +187,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装包管理器"><span class="toc-number">1.</span> <span class="toc-text">安装包管理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装我们要用到的插件"><span class="toc-number">2.</span> <span class="toc-text">安装我们要用到的插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件配置"><span class="toc-number">3.</span> <span class="toc-text">插件配置</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh-key的作用"><span class="toc-number">1.</span> <span class="toc-text">ssh-key的作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决本地多个ssh-key的配置"><span class="toc-number"></span> <span class="toc-text">解决本地多个ssh-key的配置</span></a>
  
   </div>
 

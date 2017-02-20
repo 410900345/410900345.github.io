@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sukeyang.github.io/"/>
-  <updated>2017-02-20T13:40:24.000Z</updated>
+  <updated>2017-02-20T12:00:53.000Z</updated>
   <id>https://sukeyang.github.io/</id>
   
   <author>
@@ -14,38 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>git使用技巧</title>
-    <link href="https://sukeyang.github.io/2017/02/20/git%E4%BD%BF%E7%94%A8/"/>
-    <id>https://sukeyang.github.io/2017/02/20/git使用/</id>
-    <published>2017-02-20T01:55:28.000Z</published>
-    <updated>2017-02-20T13:40:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="ssh-key的作用"><a href="#ssh-key的作用" class="headerlink" title="ssh-key的作用"></a>ssh-key的作用</h3><p>我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，<br>也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。</p>
-<h2 id="解决本地多个ssh-key的配置"><a href="#解决本地多个ssh-key的配置" class="headerlink" title="解决本地多个ssh-key的配置"></a>解决本地多个ssh-key的配置</h2><p>1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.work</span> -C <span class="string">"Key for Work"</span>  </div><div class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.github</span> -C <span class="string">"Key for GitHub"</span></div></pre></td></tr></table></figure>
-<p>在 <code>~/.ssh/config</code> 目录内修改文件config</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Host *<span class="selector-class">.workdomain</span><span class="selector-class">.com</span>   </div><div class="line">  </div><div class="line">    IdentityFile ~/.ssh/id_rsa<span class="selector-class">.work</span>  </div><div class="line">    User lee  </div><div class="line">   </div><div class="line">Host github<span class="selector-class">.com</span>  </div><div class="line">    IdentityFile ~/.ssh/id_rsa<span class="selector-class">.github</span>  </div><div class="line">    User git</div></pre></td></tr></table></figure>
-<p>用下面的命令测试一下</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span></div></pre></td></tr></table></figure>
-<p>返回成功</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi sukeyang! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</div></pre></td></tr></table></figure>
-<p>1.提示 WARNING: UNPROTECTED PRIVATE KEY FILE!  </p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@</span></div><div class="line">@         WARNING: UNPROTECTED PRIVATE <span class="built_in">KEY</span> FILE!          <span class="comment">@</span></div><div class="line">@<span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span></div><div class="line">Permissions <span class="number">0644</span> <span class="keyword">for</span> '/Users/yangshuo/.ssh/winid_rsa' are too <span class="keyword">open</span>.</div><div class="line">It is required that your private <span class="built_in">key</span> files are <span class="keyword">NOT</span> accessible by others.</div><div class="line">This private <span class="built_in">key</span> will be ignored.</div></pre></td></tr></table></figure>
-<p>解决办法：在命令行输入chmod 700 id_rsa.githu即可。这里“id_rsa.githu”就是warning里给出的密钥文件名。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;ssh-key的作用&quot;&gt;&lt;a href=&quot;#ssh-key的作用&quot; class=&quot;headerlink&quot; title=&quot;ssh-key的作用&quot;&gt;&lt;/a&gt;ssh-key的作用&lt;/h3&gt;&lt;p&gt;我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，&lt;br&gt;也
-    
-    </summary>
-    
-      <category term="tools" scheme="https://sukeyang.github.io/categories/tools/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>weex使用介绍</title>
@@ -519,6 +487,38 @@ Operation not permitted - /usr/bin/pod
       <category term="tools" scheme="https://sukeyang.github.io/tags/tools/"/>
     
       <category term="效率" scheme="https://sukeyang.github.io/tags/%E6%95%88%E7%8E%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git使用技巧</title>
+    <link href="https://sukeyang.github.io/2016/07/20/git%E4%BD%BF%E7%94%A8/"/>
+    <id>https://sukeyang.github.io/2016/07/20/git使用/</id>
+    <published>2016-07-20T01:55:28.000Z</published>
+    <updated>2017-02-20T13:43:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ssh-key的作用"><a href="#ssh-key的作用" class="headerlink" title="ssh-key的作用"></a>ssh-key的作用</h3><p>我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，<br>也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。</p>
+<h2 id="解决本地多个ssh-key的配置"><a href="#解决本地多个ssh-key的配置" class="headerlink" title="解决本地多个ssh-key的配置"></a>解决本地多个ssh-key的配置</h2><p>1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.work</span> -C <span class="string">"Key for Work"</span>  </div><div class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.github</span> -C <span class="string">"Key for GitHub"</span></div></pre></td></tr></table></figure>
+<p>在 <code>~/.ssh/config</code> 目录内修改文件config</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Host *<span class="selector-class">.workdomain</span><span class="selector-class">.com</span>   </div><div class="line">  </div><div class="line">    IdentityFile ~/.ssh/id_rsa<span class="selector-class">.work</span>  </div><div class="line">    User lee  </div><div class="line">   </div><div class="line">Host github<span class="selector-class">.com</span>  </div><div class="line">    IdentityFile ~/.ssh/id_rsa<span class="selector-class">.github</span>  </div><div class="line">    User git</div></pre></td></tr></table></figure>
+<p>用下面的命令测试一下</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span></div></pre></td></tr></table></figure>
+<p>返回成功</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi sukeyang! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</div></pre></td></tr></table></figure>
+<p>1.提示 WARNING: UNPROTECTED PRIVATE KEY FILE!  </p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@</span></div><div class="line">@         WARNING: UNPROTECTED PRIVATE <span class="built_in">KEY</span> FILE!          <span class="comment">@</span></div><div class="line">@<span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span></div><div class="line">Permissions <span class="number">0644</span> <span class="keyword">for</span> '/Users/yangshuo/.ssh/winid_rsa' are too <span class="keyword">open</span>.</div><div class="line">It is required that your private <span class="built_in">key</span> files are <span class="keyword">NOT</span> accessible by others.</div><div class="line">This private <span class="built_in">key</span> will be ignored.</div></pre></td></tr></table></figure>
+<p>解决办法：在命令行输入chmod 700 id_rsa.githu即可。这里“id_rsa.githu”就是warning里给出的密钥文件名。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;ssh-key的作用&quot;&gt;&lt;a href=&quot;#ssh-key的作用&quot; class=&quot;headerlink&quot; title=&quot;ssh-key的作用&quot;&gt;&lt;/a&gt;ssh-key的作用&lt;/h3&gt;&lt;p&gt;我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，&lt;br&gt;也
+    
+    </summary>
+    
+      <category term="tools" scheme="https://sukeyang.github.io/categories/tools/"/>
+    
     
   </entry>
   
