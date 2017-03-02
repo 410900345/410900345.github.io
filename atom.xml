@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sukeyang.github.io/"/>
-  <updated>2017-02-20T15:46:55.000Z</updated>
+  <updated>2017-02-28T12:29:09.000Z</updated>
   <id>https://sukeyang.github.io/</id>
   
   <author>
@@ -16,17 +16,91 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Masonry解析</title>
+    <link href="https://sukeyang.github.io/2017/02/28/Masonry%E8%A7%A3%E6%9E%90/"/>
+    <id>https://sukeyang.github.io/2017/02/28/Masonry解析/</id>
+    <published>2017-02-28T01:41:10.000Z</published>
+    <updated>2017-02-28T12:29:09.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="ios,技巧,tools,js,原理&lt;!--选一个--&gt;" scheme="https://sukeyang.github.io/categories/ios-%E6%8A%80%E5%B7%A7-tools-js-%E5%8E%9F%E7%90%86-%E9%80%89%E4%B8%80%E4%B8%AA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>AFN实现原理分析(2.x版本)</title>
+    <link href="https://sukeyang.github.io/2017/02/27/AFN%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/"/>
+    <id>https://sukeyang.github.io/2017/02/27/AFN实现原理分析/</id>
+    <published>2017-02-27T03:49:29.000Z</published>
+    <updated>2017-02-27T12:31:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>使用AFHTTPSessionManager进行网络请求,类继承于AFURLSessionManager</li>
+</ol>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];</div><div class="line">[manager GET:URL parameters:<span class="literal">nil</span> progress:<span class="literal">nil</span> success:^(<span class="built_in">NSURLSessionDataTask</span> *_Nonnulltask, <span class="keyword">id</span> _NullableresponseObject) &#123;</div><div class="line">  <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</div><div class="line">  <span class="comment">//将子线程从网络拉取的数据用于主线程刷新视图</span></div><div class="line">    &#125;);</div><div class="line">  &#125;failure:^(<span class="built_in">NSURLSessionDataTask</span>*_Nullabletask,<span class="built_in">NSError</span>*_Nonnullerror) &#123;</div><div class="line"></div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<p>通过查看manager方法代码可以看到其实现最终是调用了父类AFURLSessionManager的initWithSessionConfiguration：方法，</p>
+<p>设置了默认的json解析方式;</p>
+<p>最大的并发操作数为1是让所有请求的发起和等待网络响应均在同一条线程中执行，而不用为每一个请求都新建一条线程，这样节约了很多资源;</p>
+<p>默认安全策略是AFSSLPinningModeNone,</p>
+<p>该方法代码片段如下</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.sessionConfiguration = configuration;</div><div class="line"><span class="keyword">self</span>.operationQueue = [[<span class="built_in">NSOperationQueue</span> alloc] init];</div><div class="line"><span class="keyword">self</span>.operationQueue.maxConcurrentOperationCount = <span class="number">1</span>;</div><div class="line"><span class="keyword">self</span>.session = [<span class="built_in">NSURLSession</span> sessionWithConfiguration:<span class="keyword">self</span>.sessionConfiguration delegate:<span class="keyword">self</span> delegateQueue:<span class="keyword">self</span>.operationQueue];</div><div class="line"><span class="keyword">self</span>.responseSerializer = [AFJSONResponseSerializer serializer];</div></pre></td></tr></table></figure>
+<p>在响应到达后会执行AFURLSessionManager的NSURLSessionDataDelegate协议的方法，[AFURLSessioinManager URLSession:dataTask:didReceiveData:]用于查找对应的响应代理，并将后续的数据处理如数据拼接转交给该代理。该方法的实现代码如下：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">AFURLSessionManagerTaskDelegate</span> *delegate = [<span class="keyword">self </span>delegateForTask:dataTask]<span class="comment">;</span></div><div class="line">[delegate URLSession:session dataTask:dataTask didReceiveData:<span class="meta">data</span>]<span class="comment">;</span></div><div class="line"></div><div class="line"><span class="symbol">if</span> (<span class="keyword">self.dataTaskDidReceiveData) </span>&#123;</div><div class="line">    <span class="keyword">self.dataTaskDidReceiveData(session, </span>dataTask, <span class="meta">data</span>)<span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在数据比较大时，改方法可能会多次执行。</p>
+<p>当数据传输完成后会调用[AFURLSessioinManager URLSession:task:didCompleteWithError],该方法用于让对应的代理执行NSURLSessionTaskDelegate协议中的方法，并将该代理对象从字典中移除，源代码如下：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">AFURLSessionManagerTaskDelegate *delegate = [self delegateForTask:<span class="keyword">task</span>];</div><div class="line"></div><div class="line">// delegate may be nil <span class="keyword">when</span> completing a <span class="keyword">task</span> <span class="keyword">in</span> the background</div><div class="line"><span class="keyword">if</span> (delegate) &#123;</div><div class="line">    [delegate URLSession:session <span class="keyword">task</span>:<span class="keyword">task</span> didCompleteWithError:error];</div><div class="line"></div><div class="line">    [self removeDelegateForTask:<span class="keyword">task</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (self.taskDidComplete) &#123;</div><div class="line">    self.taskDidComplete(session, <span class="keyword">task</span>, error);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>随后代理执行URLSession:task:didCompleteWithError:，该方法把数据放到另一个由静态方法生成的url_session_manager_processing_queue操作队列中做数据解析，如json解析，并将解析后的数据回传到主线程或者你自己生成的操作队列里，通过通知中心将请求完成的消息传递到主线程去（后面会写一篇文章介绍通知中心的实现原理,并写一个类似的通知中心）。<br>该方法源码片段如下：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">dispatch_async(url_session_manager_processing_queue(), </span>^&#123;</div><div class="line">            NSError *serializationError = nil<span class="comment">;</span></div><div class="line">            responseObject = [manager.responseSerializer responseObjectForResponse:task.response data:[NSData dataWithData:self.mutableData] error:&amp;serializationError]<span class="comment">;</span></div><div class="line"></div><div class="line">            <span class="keyword">dispatch_group_async(manager.completionGroup </span>?: url_session_manager_completion_group(), manager.completionQueue ?: <span class="keyword">dispatch_get_main_queue(), </span>^&#123;</div><div class="line">                if (self.completionHandler) &#123;</div><div class="line">                    self.completionHandler(task.response, responseObject, serializationError)<span class="comment">;</span></div><div class="line">                &#125;</div><div class="line"></div><div class="line">            <span class="keyword">dispatch_async(dispatch_get_main_queue(), </span>^&#123;</div><div class="line">                [[NSNotificationCenter defaultCenter] postNotificationName:AFNetworkingTaskDidCompleteNotification object:task userInfo:userInfo]<span class="comment">;</span></div><div class="line">                &#125;)<span class="comment">;</span></div><div class="line">            &#125;)<span class="comment">;</span></div><div class="line">        &#125;)<span class="comment">;</span></div></pre></td></tr></table></figure>
+<p>通知的作用是decrementActivityCount;</p>
+<p>[self.refreshControl endRefreshing];等</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;使用AFHTTPSessionManager进行网络请求,类继承于AFURLSessionManager&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;
+    
+    </summary>
+    
+      <category term="原理" scheme="https://sukeyang.github.io/categories/%E5%8E%9F%E7%90%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>YTK实现原理分析</title>
+    <link href="https://sukeyang.github.io/2017/02/27/YTK%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/"/>
+    <id>https://sukeyang.github.io/2017/02/27/YTK实现原理分析/</id>
+    <published>2017-02-27T03:48:30.000Z</published>
+    <updated>2017-02-27T12:31:10.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="原理" scheme="https://sukeyang.github.io/categories/%E5%8E%9F%E7%90%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>weex使用介绍</title>
     <link href="https://sukeyang.github.io/2017/02/17/weex%E4%BD%BF%E7%94%A8/"/>
     <id>https://sukeyang.github.io/2017/02/17/weex使用/</id>
     <published>2017-02-17T03:38:28.000Z</published>
-    <updated>2017-02-20T15:46:55.000Z</updated>
+    <updated>2017-03-01T11:44:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>   最近在折腾weex,不过升级到vue2.0出现了一些问题,现在记录使用情况,暂时有一些问题没有解决,官方的链接:<br><a href="https://github.com/alibaba/weex" target="_blank" rel="external">weex官方github</a>   </p>
 <p><a href="https://github.com/weexteam/weex-devtool-iOS/blob/master/README-zh.md" target="_blank" rel="external">weex-devtool-iOS</a></p>
 <p><a href="https://github.com/weexteam/weex-hackernews/" target="_blank" rel="external">weexteam-demo</a></p>
 <h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>1.安装环境,nodejs,下面是一些常用的命令.</p>
-<p>IDE: Sublime Text + <a href="https://github.com/vuejs/vue-syntax-highlight" target="_blank" rel="external">vue-syntax-highlight</a></p>
+<p>IDE: Sublime Text + <a href="https://github.com/vuejs/vue-syntax-highlight" target="_blank" rel="external">vue-syntax-highlight</a> + HTML-CSS-JS Prettify</p>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> install</div><div class="line">sudo <span class="built_in">npm</span> install -g weex-toolkit@beta</div><div class="line"><span class="built_in">npm</span> run build</div><div class="line"><span class="built_in">npm</span> run copy:ios</div></pre></td></tr></table></figure>
 <p>2.开启服务</p>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">run</span><span class="bash"> serve</span></div></pre></td></tr></table></figure>
@@ -50,7 +124,7 @@
     <link href="https://sukeyang.github.io/2017/02/13/xuejs3/"/>
     <id>https://sukeyang.github.io/2017/02/13/xuejs3/</id>
     <published>2017-02-13T09:52:01.000Z</published>
-    <updated>2017-02-20T12:00:53.000Z</updated>
+    <updated>2017-02-25T01:53:58.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>1.js没有类的概念,只有对象,就是继承也是通过对象的方式;constructor类似于类初始化函数,<br>prototype 是个类的对象;<br>2.保持原型链路的基础上,对父类对象的属性隔离;保证重用;</p>
 <pre><code>var F = function(){};
@@ -76,7 +150,16 @@ c[i] = p[i];
 c.uber = p; 
     }
 }
-</code></pre>]]></content>
+</code></pre><h3 id="DOM环境"><a href="#DOM环境" class="headerlink" title="DOM环境"></a>DOM环境</h3><p>1.访问标签,计时器,修改样式等</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> inputs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">toggle</span> (<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> st = inputs[<span class="number">0</span>].style;</div><div class="line">	inputs[<span class="number">0</span>].style.visibility = (st.visibility == <span class="string">"hidden"</span>)?<span class="string">"visible"</span>:<span class="string">"hidden"</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> myint = setInterval(toggle,<span class="number">1000</span>);</div><div class="line">clearInterval(myint);</div></pre></td></tr></table></figure>
+<p>2.创建添加节点</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var myp = document.createElement(<span class="string">"p"</span>)<span class="comment">;</span></div><div class="line">myp.innerHTML = <span class="string">"yet another"</span><span class="comment">;</span></div><div class="line">myp.style.<span class="keyword">border </span>= <span class="string">"2px dotted blue"</span><span class="comment">;</span></div><div class="line">document.<span class="keyword">body.appendChild(myp)</span></div></pre></td></tr></table></figure>
+<p>3.插入节点,删除节点</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.insertBefore</span>(<span class="selector-tag">p</span>,document<span class="selector-class">.body</span><span class="selector-class">.firstChild</span>)</div><div class="line">document<span class="selector-class">.body</span><span class="selector-class">.removeChild</span>(myp)</div></pre></td></tr></table></figure>
+<p>4.其他常用方法</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.title =<span class="string">"123"</span>; <span class="comment">//不改变实际标签内容</span></div><div class="line"><span class="built_in">document</span>.cookie;</div></pre></td></tr></table></figure>
+<p>5.捕捉法和冒泡法</p>
+]]></content>
     
     <summary type="html">
     
@@ -321,10 +404,11 @@ function (count) {
     <link href="https://sukeyang.github.io/2017/02/06/2016%E6%80%BB%E7%BB%93/"/>
     <id>https://sukeyang.github.io/2017/02/06/2016总结/</id>
     <published>2017-02-06T04:00:58.000Z</published>
-    <updated>2017-02-20T12:00:53.000Z</updated>
+    <updated>2017-02-27T12:31:10.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="生活上"><a href="#生活上" class="headerlink" title="生活上"></a>生活上</h2><p>减肥5kg,少吃肉类,鱼类<br>看电影5次 电影院<br>看书5本 包括js 还有es6,微信小程序等内容<br>微信个人公众号<br><a id="more"></a><br>后台开发初识<br>出去旅游3次,包括北京周边<br>开通自己的博客或者简书写博客10篇内容<br>听书 鬼吹灯全集 不算书</p>
 <h2 id="工作上"><a href="#工作上" class="headerlink" title="工作上"></a>工作上</h2><p>keynote 的制作等<br>做分享 3次 ,<br>工资提升<br>提升用户到2k 活跃到2w 更新内容,10次,每月都的多100人.<br>页面的优化</p>
+<p>已经完成<br>20170226 骑车ofo到圆明园,一次游玩<br>201702025 看完<javascript面向对象编程指南></javascript面向对象编程指南></p>
 ]]></content>
     
     <summary type="html">
@@ -403,6 +487,115 @@ var component = React.createClass();
   </entry>
   
   <entry>
+    <title>创建自己Carthage支持的库(二)</title>
+    <link href="https://sukeyang.github.io/2016/12/01/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1Carthage%E6%94%AF%E6%8C%81%E7%9A%84%E5%BA%93/"/>
+    <id>https://sukeyang.github.io/2016/12/01/创建自己Carthage支持的库/</id>
+    <published>2016-12-01T09:34:32.000Z</published>
+    <updated>2017-02-27T12:31:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="创建自己Carthage支持的库"><a href="#创建自己Carthage支持的库" class="headerlink" title="创建自己Carthage支持的库"></a>创建自己Carthage支持的库</h2><h3 id="首先创建一个framework"><a href="#首先创建一个framework" class="headerlink" title="首先创建一个framework"></a>首先创建一个framework</h3><p>1.选择你的工程</p>
+<p>2.选择framework所在的Target</p>
+<p>3.选择Build Phases</p>
+<p>4.点击Header左下角的+号把你要暴露的头文件添加到Public里面（默认添加到Project里面，用鼠标把它拽过去）</p>
+<p>5.在Compile source里面添加实现的.m文件</p>
+<h3 id="在framework的BuildSettings的Packaging里面-把Produce-Module-Name-和-Produce-Name改成想要的名字XXXX"><a href="#在framework的BuildSettings的Packaging里面-把Produce-Module-Name-和-Produce-Name改成想要的名字XXXX" class="headerlink" title="在framework的BuildSettings的Packaging里面,把Produce Module Name 和 Produce Name改成想要的名字XXXX"></a>在framework的BuildSettings的Packaging里面,把Produce Module Name 和 Produce Name改成想要的名字XXXX</h3><p>1.如果你使用了类别,那么你需要在Build Settings的Linking的Other Linker Flags里加上-all_load</p>
+<p>2.如果你想你的工程支持bitcode,需要在Other C Flags 里加上-fembed-bitcode</p>
+<p>3.选择 Manager Schemes,勾上shared(这样Carthage就可以编译你的工程)</p>
+<p>4.cd到项目文件夹,运行</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> carthage build --<span class="keyword">no</span>-skip-current</div></pre></td></tr></table></figure>
+<p>命令运行完成后,你会发现你的项目文件夹里面多了一个Carthage文件夹<code>Carthage-&gt;Build-&gt;iOS-&gt;xxxx.framework!</code></p>
+<h3 id="要给别人使用的话你还需要最后一步-给你的工程打上tag-push上去"><a href="#要给别人使用的话你还需要最后一步-给你的工程打上tag-push上去" class="headerlink" title="要给别人使用的话你还需要最后一步,给你的工程打上tag,push上去"></a>要给别人使用的话你还需要最后一步,给你的工程打上tag,push上去</h3><p>在Cartfile文件添加,</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">github</span> <span class="string">"yourname/xxxx"</span> <span class="string">"master"</span></div></pre></td></tr></table></figure>
+<p>然后运行下面代码更新,frmework</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">carthage update</span></div></pre></td></tr></table></figure>
+<h2 id="参考连接"><a href="#参考连接" class="headerlink" title="参考连接"></a><code>参考连接</code></h2><p>创建自己的<a href="http://blog.csdn.net/ruglcc/article/details/53725251" target="_blank" rel="external">Cartfile支持的库</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;创建自己Carthage支持的库&quot;&gt;&lt;a href=&quot;#创建自己Carthage支持的库&quot; class=&quot;headerlink&quot; title=&quot;创建自己Carthage支持的库&quot;&gt;&lt;/a&gt;创建自己Carthage支持的库&lt;/h2&gt;&lt;h3 id=&quot;首先创建一个fra
+    
+    </summary>
+    
+      <category term="tools" scheme="https://sukeyang.github.io/categories/tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Carthage安装及使用(一)</title>
+    <link href="https://sukeyang.github.io/2016/12/01/Carthage%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
+    <id>https://sukeyang.github.io/2016/12/01/Carthage安装及使用/</id>
+    <published>2016-12-01T06:58:29.000Z</published>
+    <updated>2017-02-27T12:41:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Carthage 使用于 Swift 语言编写，只支持动态框架，只支持 iOS8+的Cocoa依赖管理工具。是一个去中心化的Cocoa依赖管理工具;<br>CocoaPods对原有工程破坏性大(建立workspace,增加一堆乱七八糟的文件),侵入性太强,耦合太高;</p>
+<h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><p>检查ruby和brew版本</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">ruby</span> -v</div><div class="line"><span class="keyword">brew </span>-v</div></pre></td></tr></table></figure>
+<p>如果电脑中没有Homebrew,终端执行脚本安装即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div></pre></td></tr></table></figure>
+<p>方法1:更新brew,安装carthage</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span>update</div><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>carthage</div></pre></td></tr></table></figure>
+<p>方法2:下载安装<a href="https://github.com/Carthage/Carthage/releases" target="_blank" rel="external">Carthage.pkg</a></p>
+<h2 id="常见命令使用"><a href="#常见命令使用" class="headerlink" title="常见命令使用"></a>常见命令使用</h2><figure class="highlight d"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">carthage <span class="keyword">version</span></div><div class="line">brew upgrade carthage  <span class="comment">//升级</span></div><div class="line">sudo brew uninstall carthage  <span class="comment">//卸载</span></div></pre></td></tr></table></figure>
+<p>创建空的Cartfile文件</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">touch Cartfile</span></div></pre></td></tr></table></figure>
+<p>打开Cartfile添加三方库信息,如</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">github <span class="string">"Alamofire/Alamofire"</span><span class="function"> ~&gt;</span> <span class="number">3.0</span></div></pre></td></tr></table></figure>
+<p>保存并关闭Cartfile文件并执行,<code>--platform iOS</code> 只是iOS平台</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">carthage <span class="keyword">update</span> <span class="comment">--platform iOS</span></div></pre></td></tr></table></figure>
+<p>引入设置Xcode自动搜索Framework的目录,Target—&gt;Build Setting—&gt;Framework Search Path—&gt;添加路径下面</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">＂$(SRCROOT)<span class="regexp">/Carthage/</span>Build<span class="regexp">/iOS＂</span></div></pre></td></tr></table></figure>
+<h3 id="1-Cartfile-resolved-需要提交到-Git"><a href="#1-Cartfile-resolved-需要提交到-Git" class="headerlink" title="1.Cartfile.resolved (需要提交到 Git)"></a>1.Cartfile.resolved (需要提交到 Git)</h3><p>在执行 carthage update 命令后会在根目录创建一个 Cartfile.resolved 文件，这个文件是生成后的依赖关系，不能修改。</p>
+<p>Cartfile.resolved 文件确保提交的项目可以使用完全相同的配置与方式运行启用。 跟踪项目当前所用的依赖版本号，保持多端开发一致,出于这个原因,强烈建议提交这个文件到版本控制中</p>
+<h3 id="2-自动生成的Carthage目录-不需要提交到-Git"><a href="#2-自动生成的Carthage目录-不需要提交到-Git" class="headerlink" title="2.自动生成的Carthage目录 (不需要提交到 Git)"></a>2.自动生成的Carthage目录 (不需要提交到 Git)</h3><p>Carthage文件夹用来存放:</p>
+<p>carthage checkout 从git拉取的依赖库源文件(Checkouts)</p>
+<p>carthage build编译后的文件(Build),包含Mac 与 iOS对应的.framework,文件夹用来存放依赖库的源文件和编译后的文件(不需要提交到 Git，可以修改.gitignore文件，增加忽略 Carthage 文件夹就行了：#Carthage Carthage）</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;Carthage 使用于 Swift 语言编写，只支持动态框架，只支持 iOS8+的Cocoa依赖管理工具。是一个去中心化的Cocoa依赖管
+    
+    </summary>
+    
+      <category term="tools" scheme="https://sukeyang.github.io/categories/tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>tableviewcell左对齐</title>
+    <link href="https://sukeyang.github.io/2016/11/24/tableviewcell%E5%B7%A6%E5%AF%B9%E9%BD%90/"/>
+    <id>https://sukeyang.github.io/2016/11/24/tableviewcell左对齐/</id>
+    <published>2016-11-24T02:47:54.000Z</published>
+    <updated>2017-02-25T01:53:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.解决tableview separatorInset cell分割线左对齐</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">-</span> (void)<span class="selector-tag">tableView</span><span class="selector-pseudo">:(UITableView</span> *)<span class="selector-tag">tableView</span> <span class="selector-tag">willDisplayCell</span><span class="selector-pseudo">:(UITableViewCell</span> *)<span class="selector-tag">cell</span> <span class="selector-tag">forRowAtIndexPath</span><span class="selector-pseudo">:(NSIndexPath</span> *)<span class="selector-tag">indexPath</span> &#123;</div><div class="line">    <span class="comment">// Remove seperator inset</span></div><div class="line">    <span class="selector-tag">if</span> ([cell <span class="attribute">respondsToSelector</span>:<span class="variable">@selector</span>(<span class="attribute">setSeparatorInset</span>:)]) &#123;</div><div class="line">        <span class="selector-attr">[cell setSeparatorInset:UIEdgeInsetsZero]</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// Prevent the cell from inheriting the Table View's margin settings</span></div><div class="line">    <span class="selector-tag">if</span> ([cell <span class="attribute">respondsToSelector</span>:<span class="variable">@selector</span>(<span class="attribute">setPreservesSuperviewLayoutMargins</span>:)]) &#123;</div><div class="line">        <span class="selector-attr">[cell setPreservesSuperviewLayoutMargins:NO]</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// Explictly set your cell's layout margins</span></div><div class="line">    <span class="selector-tag">if</span> ([cell <span class="attribute">respondsToSelector</span>:<span class="variable">@selector</span>(<span class="attribute">setLayoutMargins</span>:)]) &#123;</div><div class="line">        <span class="selector-attr">[cell setLayoutMargins:UIEdgeInsetsZero]</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>解释说明:</code><br>iOS7，想要设置cell的分割线显示到最左端，只需要设置separatorInset的值为UIEdgeInsetsZero。</p>
+<p>iOS8，简单设置separatorInset的值为UIEdgeInsetsZero的方法已经无效了。UIView的layoutMargins 默认为{8, 8, 8, 8}。</p>
+<p>cell的preservesSuperviewLayoutMargins默认为true时，可能会导致cell被其父UITableView的LayoutMargin影响。如果设置为false时，cell不被UITableView的LayoutMargin影响。</p>
+<p>2.全局设置方法(iOS7 8 9 通用)</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-attr">[[UITableView appearance]</span> <span class="selector-tag">setSeparatorStyle</span><span class="selector-pseudo">:UITableViewCellSeparatorStyleSingleLine</span>];</div><div class="line"></div><div class="line"><span class="selector-attr">[[UITableView appearance]</span> <span class="selector-tag">setSeparatorInset</span><span class="selector-pseudo">:UIEdgeInsetsZero</span>];</div><div class="line"></div><div class="line"><span class="selector-attr">[[UITableViewCell appearance]</span> <span class="selector-tag">setSeparatorInset</span><span class="selector-pseudo">:UIEdgeInsetsZero</span>];</div><div class="line"></div><div class="line"><span class="selector-tag">if</span> ([UITableView <span class="attribute">instancesRespondToSelector</span>:<span class="variable">@selector</span>(<span class="attribute">setLayoutMargins</span>:)]) &#123;</div><div class="line"></div><div class="line"><span class="selector-attr">[[UITableView appearance]</span> <span class="selector-tag">setLayoutMargins</span><span class="selector-pseudo">:UIEdgeInsetsZero</span>];</div><div class="line"></div><div class="line"><span class="selector-attr">[[UITableViewCell appearance]</span> <span class="selector-tag">setLayoutMargins</span><span class="selector-pseudo">:UIEdgeInsetsZero</span>];</div><div class="line"></div><div class="line"><span class="selector-attr">[[UITableViewCell appearance]</span> <span class="selector-tag">setPreservesSuperviewLayoutMargins</span><span class="selector-pseudo">:NO</span>];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>参考链接:</p>
+<p>1.<a href="http://stackoverflow.com/questions/25770119/ios-8-uitableview-separator-inset-0-not-working?page=1&amp;tab=active#tab-top" target="_blank" rel="external">stackoverflow</a></p>
+<p>2.<a href="http://www.cnblogs.com/Zev_Fung/p/5650922.html" target="_blank" rel="external">http://www.cnblogs.com/Zev_Fung/p/5650922.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.解决tableview separatorInset cell分割线左对齐&lt;/p&gt;
+&lt;figure class=&quot;highlight less&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;d
+    
+    </summary>
+    
+      <category term="ios" scheme="https://sukeyang.github.io/categories/ios/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>iOS 9 - Keyboard 出现在 UIAlertView 不消失</title>
     <link href="https://sukeyang.github.io/2016/10/01/UIAlertView%E4%B8%8D%E6%B6%88%E5%A4%B1/"/>
     <id>https://sukeyang.github.io/2016/10/01/UIAlertView不消失/</id>
@@ -453,6 +646,40 @@ var component = React.createClass();
   </entry>
   
   <entry>
+    <title>Cocopod工作原理分析</title>
+    <link href="https://sukeyang.github.io/2016/08/27/cocopod%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/"/>
+    <id>https://sukeyang.github.io/2016/08/27/cocopod工作原理分析/</id>
+    <published>2016-08-27T05:58:30.000Z</published>
+    <updated>2017-02-27T12:31:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Cocoapods-的工作流程"><a href="#Cocoapods-的工作流程" class="headerlink" title="Cocoapods 的工作流程"></a>Cocoapods 的工作流程</h2><h4 id="pod-install-执行流程可分为如下五个步骤"><a href="#pod-install-执行流程可分为如下五个步骤" class="headerlink" title="pod install 执行流程可分为如下五个步骤:"></a>pod install 执行流程可分为如下五个步骤:</h4><p>1.查看 ~/.cocoapods/repo/master/Specs 是否存在;</p>
+<p>2.存在，从这个本地三方库信息库中获取 Podfile 中对应三方库的 git 地址;</p>
+<p>3.不存在，输出 Setting up CocoaPods Master repo，并拉取三方库信息库到 ~/.cocoapods/repo/中.<a href="https://github.com/cocoapods/Specs" target="_blank" rel="external">Master repo地址</a>;</p>
+<p>4.使用 git 命令从 GitHub 上拉取 Podfile 中对应的三方库源码;</p>
+<p>cd 进了 Alamofire 文件夹,里面都是release 版本号,当我们使用 pod search Alamofire 命令时会将这里的所有版本号输出出来。到最新版本号里面是一个 Alamofire.podspec.json 文件,可以看到这里包含了所有的三方库的相关信息，包括名字，协议，描述，Github 地址，支持平台等。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="attr">"name"</span>: <span class="string">"Alamofire"</span>,</div><div class="line">  <span class="attr">"version"</span>: <span class="string">"4.0.0"</span>,</div><div class="line">  <span class="attr">"license"</span>: <span class="string">"MIT"</span>,</div><div class="line">  <span class="attr">"summary"</span>: <span class="string">"Elegant HTTP Networking in Swift"</span>,</div><div class="line">  <span class="attr">"homepage"</span>: <span class="string">"https://github.com/Alamofire/Alamofire"</span>,</div><div class="line">  <span class="attr">"social_media_url"</span>: <span class="string">"http://twitter.com/AlamofireSF"</span>,</div><div class="line">  <span class="attr">"authors"</span>: &#123;</div><div class="line">    <span class="attr">"Alamofire Software Foundation"</span>: <span class="string">"info@alamofire.org"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"source"</span>: &#123;</div><div class="line">    <span class="attr">"git"</span>: <span class="string">"https://github.com/Alamofire/Alamofire.git"</span>,</div><div class="line">    <span class="attr">"tag"</span>: <span class="string">"4.0.0"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"platforms"</span>: &#123;</div><div class="line">    <span class="attr">"ios"</span>: <span class="string">"8.0"</span>,</div><div class="line">    <span class="attr">"osx"</span>: <span class="string">"10.9"</span>,</div><div class="line">    <span class="attr">"tvos"</span>: <span class="string">"9.0"</span>,</div><div class="line">    <span class="attr">"watchos"</span>: <span class="string">"2.0"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"source_files"</span>: <span class="string">"Source/*.swift"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在查找到对应文件夹后，进行 json 数据解析，获得三方库的 repo 地址，调用本地 git 命令拉取源码，拉取完成后调用本地 xcodebuild 命令把三方库编译为 Framework。</p>
+<h4 id="pod-setup-设置pod仓库-执行流程可分为如下步骤"><a href="#pod-setup-设置pod仓库-执行流程可分为如下步骤" class="headerlink" title="pod setup 设置pod仓库,执行流程可分为如下步骤:"></a>pod setup 设置pod仓库,执行流程可分为如下步骤:</h4><p>1.判断 ~/.cocoapods/repo目录是否存在</p>
+<p>2.存在，依次调用 set_master_repo_url，set_master_repo_branch，update_master_repo 三个函数分别设置 repo 主分支地址，git checkout 到主分支，拉取主分支代码，更新repo</p>
+<p>3.不存在，添加主分支 repo</p>
+<h4 id="Podfile-lock"><a href="#Podfile-lock" class="headerlink" title="Podfile.lock"></a>Podfile.lock</h4><p>这是 CocoaPods 创建的最重要的文件之一。它记录了需要被安装的 pod 的每个已安装的版本。如果你想知道已安装的 pod 是哪个版本，可以查看这个文件。推荐将 Podfile.lock 文件加入到版本控制中，这有助于整个团队的一致性。</p>
+<h4 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h4><p>1.若 Podfile 中指定 Alamofire 的版本号为 4.2.0,但本地 ~/cocoapods/repo/master/Specs/Alamofire 中并没有此版本号，此时使用 pod install –no-repo-update 会出现错误;<br>2.我们便可以手动在 ~./cocoapods/repo/master/Specs 中添加我们需要的三方库版本信息，避免了把所有的并没有使用到的三方库信息更新到本地。<br>3.这样可以避免更新的内容过大就会,等待很久。</p>
+<h4 id="原理和说明"><a href="#原理和说明" class="headerlink" title="原理和说明"></a>原理和说明</h4><p>1、第三方库会被编译成.a静态库供我们真正的工程使用。<br>CocoaPods会将所有的第三方库以target的方式组成一个名为Pods的工程，该工程就放在刚才新生成的Pods目录下。整个第三方库工程会生成一个名称为libPods.a的静态库提供给我们自己的CocoaPodsTest工程使用。<br>对于资源文件，CocoaPods提供了一个名为Pods-resources.sh的bash脚本，该脚本在每次项目编译的时候都会执行，将第三方库的各种资源文件复制到目标目录中</p>
+<p>2、CocoaPods通过一个名为Pods.xcconfig的文件来在编译时设置所有的依赖和参数,tagert配置文件</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Cocoapods-的工作流程&quot;&gt;&lt;a href=&quot;#Cocoapods-的工作流程&quot; class=&quot;headerlink&quot; title=&quot;Cocoapods 的工作流程&quot;&gt;&lt;/a&gt;Cocoapods 的工作流程&lt;/h2&gt;&lt;h4 id=&quot;pod-install-执
+    
+    </summary>
+    
+      <category term="原理" scheme="https://sukeyang.github.io/categories/%E5%8E%9F%E7%90%86/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>iOS CocoaPods安装使用错误记录</title>
     <link href="https://sukeyang.github.io/2016/08/02/CocoaPods%E5%AE%89%E8%A3%85/"/>
     <id>https://sukeyang.github.io/2016/08/02/CocoaPods安装/</id>
@@ -495,7 +722,7 @@ Operation not permitted - /usr/bin/pod
     <link href="https://sukeyang.github.io/2016/07/20/git%E4%BD%BF%E7%94%A8/"/>
     <id>https://sukeyang.github.io/2016/07/20/git使用/</id>
     <published>2016-07-20T01:55:28.000Z</published>
-    <updated>2017-02-20T14:11:48.000Z</updated>
+    <updated>2017-02-21T13:32:58.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="ssh-key的作用"><a href="#ssh-key的作用" class="headerlink" title="ssh-key的作用"></a>ssh-key的作用</h2><p>我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，<br>也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。</p>
 <h2 id="解决本地多个ssh-key的配置"><a href="#解决本地多个ssh-key的配置" class="headerlink" title="解决本地多个ssh-key的配置"></a>解决本地多个ssh-key的配置</h2><p>1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件</p>
@@ -508,7 +735,9 @@ Operation not permitted - /usr/bin/pod
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi sukeyang! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</div></pre></td></tr></table></figure>
 <p>1.提示 WARNING: UNPROTECTED PRIVATE KEY FILE!  </p>
 <figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@</span></div><div class="line">@         WARNING: UNPROTECTED PRIVATE <span class="built_in">KEY</span> FILE!          <span class="comment">@</span></div><div class="line">@<span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span></div><div class="line">Permissions <span class="number">0644</span> <span class="keyword">for</span> '/Users/yangshuo/.ssh/winid_rsa' are too <span class="keyword">open</span>.</div><div class="line">It is required that your private <span class="built_in">key</span> files are <span class="keyword">NOT</span> accessible by others.</div><div class="line">This private <span class="built_in">key</span> will be ignored.</div></pre></td></tr></table></figure>
-<p>解决办法：在命令行输入chmod 700 id_rsa.github即可。这里“id_rsa.githu”就是warning里给出的密钥文件名。</p>
+<p>解决办法：在命令行输入chmod 700 id_rsa.github即可。这里“id_rsa.githu”就是warning里给出的密钥文件名。<br>2.报错No submodule mapping found in .gitmodules for path;</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git submodule status</div><div class="line">git rm --cached Classes/<span class="class"><span class="keyword">lib</span>/<span class="title">AFKissXMLRequestOperation</span></span></div></pre></td></tr></table></figure>
+<p>查看状态,Classes/lib/AFKissXMLRequestOperation<br>为要删除的路径,然后就oK了.</p>
 ]]></content>
     
     <summary type="html">
@@ -527,27 +756,23 @@ Operation not permitted - /usr/bin/pod
     <link href="https://sukeyang.github.io/2016/07/03/%E9%83%A8%E5%88%86App%E6%9B%B4%E6%96%B0%E6%97%A0%E6%B3%95%E8%81%94%E7%BD%91/"/>
     <id>https://sukeyang.github.io/2016/07/03/部分App更新无法联网/</id>
     <published>2016-07-03T04:00:58.000Z</published>
-    <updated>2017-02-20T12:00:53.000Z</updated>
+    <updated>2017-03-02T14:25:39.000Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>苹果在iOS10中，增加了“使用无线局域网与蜂窝移动应用”的功能。有些App升级后默认关闭了数据使用，导致无法联网。</strong></p>
-<p>1.进入“设置-蜂窝移动网络-使用无线局域网与蜂窝移动的应用”（或者“设置-无线局域网-使用无线局域网与蜂窝移动的应用”），找到无法联网的App，允许其“使用数据”即可。</p>
-<p>2.另外还有一种Bug情况：在该列表中找不到这款无法联网的App。<br><a id="more"></a></p>
-<ul>
+    <content type="html"><![CDATA[<h2 id="苹果在iOS10中，增加了“使用无线局域网与蜂窝移动应用”的功能。有些App升级后默认关闭了数据使用，导致无法联网"><a href="#苹果在iOS10中，增加了“使用无线局域网与蜂窝移动应用”的功能。有些App升级后默认关闭了数据使用，导致无法联网" class="headerlink" title="苹果在iOS10中，增加了“使用无线局域网与蜂窝移动应用”的功能。有些App升级后默认关闭了数据使用，导致无法联网"></a>苹果在iOS10中，增加了“使用无线局域网与蜂窝移动应用”的功能。有些App升级后默认关闭了数据使用，导致无法联网</h2><h3 id="方法1-进入“设置-gt-蜂窝移动网络-gt-使用无线局域网与蜂窝移动的应用”（或者“设置-gt-无线局域网-gt-使用无线局域网与蜂窝移动的应用”），找到无法联网的App，允许其“使用数据”即可。"><a href="#方法1-进入“设置-gt-蜂窝移动网络-gt-使用无线局域网与蜂窝移动的应用”（或者“设置-gt-无线局域网-gt-使用无线局域网与蜂窝移动的应用”），找到无法联网的App，允许其“使用数据”即可。" class="headerlink" title="方法1:进入“设置-&gt;蜂窝移动网络-&gt;使用无线局域网与蜂窝移动的应用”（或者“设置-&gt;无线局域网-&gt;使用无线局域网与蜂窝移动的应用”），找到无法联网的App，允许其“使用数据”即可。"></a>方法1:进入“设置-&gt;蜂窝移动网络-&gt;使用无线局域网与蜂窝移动的应用”（或者“设置-&gt;无线局域网-&gt;使用无线局域网与蜂窝移动的应用”），找到无法联网的App，允许其“使用数据”即可。</h3><h3 id="方法2-另外还有一种Bug情况：在该列表中找不到这款无法联网的App。"><a href="#方法2-另外还有一种Bug情况：在该列表中找不到这款无法联网的App。" class="headerlink" title="方法2:另外还有一种Bug情况：在该列表中找不到这款无法联网的App。"></a>方法2:另外还有一种Bug情况：在该列表中找不到这款无法联网的App。</h3><ul>
 <li><p>此时，在列表中任意选择一个App，先关闭“无线局域网与蜂窝移动数据“，即不允许其使用数据。然后再重新打开允许使用“无线局域网与蜂窝移动数据”。</p>
 </li>
 <li><p>返回桌面，再次打开刚才无法联网的App，这时候系统会提示“是否允许App使用数据网络”，点击“允许”，App即可顺利联网使用。</p>
 </li>
 </ul>
-<p>3.重启手机,进入app,会进行提示!</p>
-]]></content>
+<h3 id="方法3-重启手机-进入app-会进行提示"><a href="#方法3-重启手机-进入app-会进行提示" class="headerlink" title="方法3:重启手机,进入app,会进行提示!"></a>方法3:重启手机,进入app,会进行提示!</h3>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;苹果在iOS10中，增加了“使用无线局域网与蜂窝移动应用”的功能。有些App升级后默认关闭了数据使用，导致无法联网。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;1.进入“设置-蜂窝移动网络-使用无线局域网与蜂窝移动的应用”（或者“设置-无线局域网-使用无线局域网与蜂窝移动的应用”），找到无法联网的App，允许其“使用数据”即可。&lt;/p&gt;
-&lt;p&gt;2.另外还有一种Bug情况：在该列表中找不到这款无法联网的App。&lt;br&gt;
+      &lt;h2 id=&quot;苹果在iOS10中，增加了“使用无线局域网与蜂窝移动应用”的功能。有些App升级后默认关闭了数据使用，导致无法联网&quot;&gt;&lt;a href=&quot;#苹果在iOS10中，增加了“使用无线局域网与蜂窝移动应用”的功能。有些App升级后默认关闭了数据使用，导致无法联网&quot; clas
     
     </summary>
+    
+      <category term="iphone" scheme="https://sukeyang.github.io/categories/iphone/"/>
     
     
   </entry>
@@ -596,99 +821,6 @@ id: ## 这里填写前面记下的 Swiftype id
       &lt;h3 id=&quot;1-创建分类&quot;&gt;&lt;a href=&quot;#1-创建分类&quot; class=&quot;headerlink&quot; title=&quot;1.创建分类&quot;&gt;&lt;/a&gt;1.创建分类&lt;/h3&gt;&lt;p&gt;建立分类文件夹&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;hexo new page categories
 &lt;/code
-    
-    </summary>
-    
-      <category term="tools" scheme="https://sukeyang.github.io/categories/tools/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>GitHub + Hexo 搭建博客总结(一)</title>
-    <link href="https://sukeyang.github.io/2016/06/04/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    <id>https://sukeyang.github.io/2016/06/04/博客搭建/</id>
-    <published>2016-06-04T08:40:33.000Z</published>
-    <updated>2017-02-20T14:36:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="安装配置环境"><a href="#安装配置环境" class="headerlink" title="安装配置环境"></a>安装配置环境</h3><p>1.安装Node.js,<a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs官网</a>，更换为<a href="http://npm.taobao.org" target="_blank" rel="external">淘宝的npm源</a></p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> install cnpm -g --registry=https:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org</div></pre></td></tr></table></figure>
-<p><code>注</code>：cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm（以下操作将以cnpm代替npm）</p>
-<p>2.安装hexo </p>
-<pre><code>sudo npm install hexo-cli -g
-</code></pre><p>3.初始化Hexo</p>
-<pre><code>hexo init
-</code></pre><p>4.安装依赖<br><a id="more"></a></p>
-<pre><code>npm install
-npm install hexo-server --save     #服务器
-</code></pre><p>5.启动Hexo</p>
-<pre><code>hexo server
-</code></pre><p>或者简写</p>
-<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s
-</code></pre><p>然后浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 你会看到Hexo的示例页面.</p>
-<p>6.配置github,创建代码仓库,这个仓库的名字需要和你的账号对应。格式:  yourname.github.io ,然后 <a href="https://yourname.github.io" target="_blank" rel="external">https://yourname.github.io</a> ,就是部署的网页地址<br><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="external">Generating a new SSH key</a><br>7.config 的一些配置</p>
-<pre><code>Plugins:  #插件
-- hexo-generator-feed
-- hexo-generator-sitemap
-#Feed Atom
-feed:
-    type: atom
-    path: atom.xml
-    limit: 20
-
-#sitemap
-sitemap:
-    path: sitemap.xml
-
-theme: jacman #主题更换themes/
-
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-   type: git
-   repo: https://github.com/410900345/410900345.github.io.git #github仓库地址
-   branch: master # github分支
-</code></pre><p><code>格式要比上一行多两个空格,才能正确</code><br>8.jacman主题的使用,<a href="http://wuchong.me/blog/2014/11/20/how-to-use-jacman/" target="_blank" rel="external">传送门</a>,在jacman/_config.yml里面设置,评论 comments填写duoshuo_shortname多说的用户名，启用多说评论系统。</p>
-<h3 id="使用Hexo"><a href="#使用Hexo" class="headerlink" title="使用Hexo"></a>使用Hexo</h3><p>1.新建文章</p>
-<pre><code>hexo new &quot;test&quot;
-</code></pre><p>2.生成静态网站</p>
-<pre><code>hexo generate
-</code></pre><p>3.hexo部署</p>
-<pre><code>hexo deploy     
-</code></pre><p>或者简写</p>
-<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
-</code></pre><p>提示<code>[info] Deploy done: git</code> 说明部署成功,<a href="https://410900345.github.io" target="_blank" rel="external">我的个人博客</a></p>
-<p>4.更换主题 <a href="https://github.com/wuchong/jacman" target="_blank" rel="external">jacman</a></p>
-<pre><code>cd  hexo
-git clone https://github.com/wuchong/jacman.git themes/jacman
-</code></pre><p>5.sitemap &amp; rss访问/atom.xml和/sitemap.xml</p>
-<pre><code>$ npm install hexo-generator-feed --save
-$ npm install hexo-generator-sitemap --save
-$ npm install hexo-generator-baidu-sitemap --save
-$ hexo generate   
-</code></pre><p><code>必须执行最后一步generate才生效</code></p>
-<h3 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h3><p>1.白板和Cannot GET / 几个字,我们需要手动配置些东西，我们需要输入下面三行命令：</p>
-<pre><code>npm install hexo-renderer-ejs --save
-npm install hexo-renderer-stylus --save
-npm install hexo-renderer-marked --save
-这个时候再重新生成静态文件，命令：
-hexo generate （或hexo g）
-启动本地服务器：
-hexo server （或hexo s）
-</code></pre><p>2.如果在博客文章列表中，不想全文显示，可以增加 <!--more-->, 后面的内容就不会显示 </p>
-<pre><code>&lt;!--more--&gt;
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;安装配置环境&quot;&gt;&lt;a href=&quot;#安装配置环境&quot; class=&quot;headerlink&quot; title=&quot;安装配置环境&quot;&gt;&lt;/a&gt;安装配置环境&lt;/h3&gt;&lt;p&gt;1.安装Node.js,&lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Nodejs官网&lt;/a&gt;，更换为&lt;a href=&quot;http://npm.taobao.org&quot;&gt;淘宝的npm源&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight coffeescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;npm&lt;/span&gt; install cnpm -g --registry=https:&lt;span class=&quot;regexp&quot;&gt;//&lt;/span&gt;registry.&lt;span class=&quot;built_in&quot;&gt;npm&lt;/span&gt;.taobao.org&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;code&gt;注&lt;/code&gt;：cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm（以下操作将以cnpm代替npm）&lt;/p&gt;
-&lt;p&gt;2.安装hexo &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo npm install hexo-cli -g
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.初始化Hexo&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hexo init
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4.安装依赖&lt;br&gt;
     
     </summary>
     
