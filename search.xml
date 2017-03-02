@@ -682,7 +682,7 @@ id: ## 这里填写前面记下的 Swiftype id
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">index:</span></div><div class="line"><span class="attr">  expand:</span> <span class="literal">false</span>           <span class="comment">## default is unexpanding,so you can only see the short description of each post.</span></div><div class="line"><span class="attr">  excerpt_link:</span> Read More</div></pre></td></tr></table></figure>
 <h3 id="7-配置模板文章"><a href="#7-配置模板文章" class="headerlink" title="7.配置模板文章"></a>7.配置模板文章</h3><p>我们可以修改根目录下\scaffolds\post.md文件，配置好基本的信息，比如：</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">title:</span> GitHub + Hexo 搭建博客总结(二)</div><div class="line"><span class="symbol">date:</span> <span class="number">1465292075000</span></div><div class="line"><span class="symbol">categories:</span> </div><div class="line">  tools</div></pre></td></tr></table></figure>
-<h3 id="8-代码显示不全等问题用下面方式避免-官网说明-链接"><a href="#8-代码显示不全等问题用下面方式避免-官网说明-链接" class="headerlink" title="8.代码显示不全等问题用下面方式避免,官网说明,链接"></a>8.代码显示不全等问题用下面方式避免,官网说明,<a href="https://hexo.io/docs/tag-plugins.html#Raw" target="_blank" rel="external">链接</a></h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;% codeblock lang:objc %&#125;</div><div class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</div><div class="line">&#123;% endcodeblock %&#125;</div><div class="line">```	</div><div class="line">### <span class="number">9.</span>执行的命令-bash: hexo: command not found解决办法</div></pre></td></tr></table></figure>
+<h3 id="8-代码显示不全等问题用下面方式避免-官网说明-链接"><a href="#8-代码显示不全等问题用下面方式避免-官网说明-链接" class="headerlink" title="8.代码显示不全等问题用下面方式避免,官网说明,链接"></a>8.代码显示不全等问题用下面方式避免,官网说明,<a href="https://hexo.io/docs/tag-plugins.html#Raw" target="_blank" rel="external">链接</a></h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;% codeblock lang:objc %&#125;</div><div class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</div><div class="line">&#123;% endcodeblock %&#125;</div><div class="line">```	</div><div class="line"></div><div class="line">### <span class="number">9.</span>执行的命令-bash: hexo: command not found解决办法</div></pre></td></tr></table></figure>
 <p>npm install -g hexo-cli</p>
 <p>/usr/local/bin/node /usr/local/lib/node_modules/hexo-cli/bin/hexo  clean<br>```</p>
 ]]></content>
@@ -781,14 +781,14 @@ hexo server （或hexo s）
     
     <entry>
       <title></title>
-      <url>https://sukeyang.github.io/baidu_verify_U46qrtfJuH.html</url>
-      <content type="html"><![CDATA[U46qrtfJuH]]></content>
+      <url>https://sukeyang.github.io/googlee7b1aeaf649970a2.html</url>
+      <content type="html"><![CDATA[google-site-verification: googlee7b1aeaf649970a2.html]]></content>
     </entry>
     
     <entry>
       <title></title>
-      <url>https://sukeyang.github.io/googlee7b1aeaf649970a2.html</url>
-      <content type="html"><![CDATA[google-site-verification: googlee7b1aeaf649970a2.html]]></content>
+      <url>https://sukeyang.github.io/baidu_verify_U46qrtfJuH.html</url>
+      <content type="html"><![CDATA[U46qrtfJuH]]></content>
     </entry>
     
     <entry>
