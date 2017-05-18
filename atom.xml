@@ -715,41 +715,6 @@ var component = React.createClass();
   </entry>
   
   <entry>
-    <title>Atom+Nuclide开发工具(React Native)</title>
-    <link href="https://sukeyang.github.io/2016/07/27/Atom+Nuclide%E7%8E%AF%E5%A2%83/"/>
-    <id>https://sukeyang.github.io/2016/07/27/Atom+Nuclide环境/</id>
-    <published>2016-07-27T03:48:30.000Z</published>
-    <updated>2017-05-18T14:39:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><h3 id="1-安装atom-https-atom-io-下载最新版本"><a href="#1-安装atom-https-atom-io-下载最新版本" class="headerlink" title="1.安装atom https://atom.io/,下载最新版本."></a>1.安装atom <a href="https://atom.io/" target="_blank" rel="external">https://atom.io/</a>,下载最新版本.</h3><h3 id="2-Nuclide常规安装"><a href="#2-Nuclide常规安装" class="headerlink" title="2.Nuclide常规安装"></a>2.Nuclide常规安装</h3><p>Nuclide项目官方地址:<a href="https://github.com/facebook/nuclide" target="_blank" rel="external">https://github.com/facebook/nuclide</a></p>
-<p>点击Atom-&gt;Preferences打开Setting,然后点击install，输入nuclide搜索，进行下载即可</p>
-<p><code>上面安装方式比较慢,更推荐源码安装</code>:</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">clone</span>  <span class="title">https</span>://github.com/facebook/nuclide.git</div><div class="line">cd  nuclide</div><div class="line">npm install</div><div class="line">apm link</div></pre></td></tr></table></figure>
-<h3 id="3-Nuclide常规配置"><a href="#3-Nuclide常规配置" class="headerlink" title="3.Nuclide常规配置"></a>3.Nuclide常规配置</h3><h4 id="1-搜索“nuclide”，点击“Settings”"><a href="#1-搜索“nuclide”，点击“Settings”" class="headerlink" title="1.搜索“nuclide”，点击“Settings”"></a>1.搜索“nuclide”，点击“Settings”</h4><p>选中:intall recommmended packages on startup<br>关闭 Atom ,重新打开.</p>
-<h4 id="2-安装watchman-和-flow"><a href="#2-安装watchman-和-flow" class="headerlink" title="2.安装watchman 和 flow"></a>2.安装watchman 和 flow</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>watchman</div><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>flow</div><div class="line">npm <span class="keyword">install </span>fbjs</div></pre></td></tr></table></figure>
-<p>如果安装过，可以更新一下</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span>upgrade watchman</div><div class="line"><span class="keyword">brew </span>upgrade flow</div></pre></td></tr></table></figure>
-<h4 id="3-常用插件"><a href="#3-常用插件" class="headerlink" title="3.常用插件"></a>3.常用插件</h4><p>禁用自带的<code>nuclide-format-js</code></p>
-<p>下载格式化<a href="https://atom.io/packages/atom-beautify" target="_blank" rel="external">https://atom.io/packages/atom-beautify</a><br>jsx里面开启</p>
-<p>消除atom 中间的线设置里面的atom-&gt;stylesheet添加下面代码</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">atom-text-editor</span><span class="selector-pseudo">::shadow</span> <span class="selector-class">.wrap-guide</span> &#123;</div><div class="line">  <span class="attribute">visibility</span>: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<p><a href="http://www.lcode.org/%E3%80%90react-native%E5%BC%80%E5%8F%91%E3%80%91react-native%E5%BC%80%E5%8F%91ide%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/" target="_blank" rel="external">参考1</a></p>
-<p><a href="http://www.hangge.com/blog/cache/detail_1490.html#" target="_blank" rel="external">参考2</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;安装环境&quot;&gt;&lt;a href=&quot;#安装环境&quot; class=&quot;headerlink&quot; title=&quot;安装环境&quot;&gt;&lt;/a&gt;安装环境&lt;/h2&gt;&lt;h3 id=&quot;1-安装atom-https-atom-io-下载最新版本&quot;&gt;&lt;a href=&quot;#1-安装atom-https-a
-    
-    </summary>
-    
-      <category term="tools" scheme="https://sukeyang.github.io/categories/tools/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>autojum和zsh使用MAC</title>
     <link href="https://sukeyang.github.io/2016/07/27/autojump%E5%92%8Czsh%E4%BD%BF%E7%94%A8MAC/"/>
     <id>https://sukeyang.github.io/2016/07/27/autojump和zsh使用MAC/</id>
@@ -795,6 +760,41 @@ var component = React.createClass();
     <summary type="html">
     
       &lt;h2 id=&quot;安装oh-my-zsh环境&quot;&gt;&lt;a href=&quot;#安装oh-my-zsh环境&quot; class=&quot;headerlink&quot; title=&quot;安装oh my zsh环境&quot;&gt;&lt;/a&gt;安装oh my zsh环境&lt;/h2&gt;&lt;h3 id=&quot;1-安装wget-http-ftp-gnu
+    
+    </summary>
+    
+      <category term="tools" scheme="https://sukeyang.github.io/categories/tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Atom+Nuclide开发工具(React Native)</title>
+    <link href="https://sukeyang.github.io/2016/07/27/Atom+Nuclide%E7%8E%AF%E5%A2%83/"/>
+    <id>https://sukeyang.github.io/2016/07/27/Atom+Nuclide环境/</id>
+    <published>2016-07-27T03:48:30.000Z</published>
+    <updated>2017-05-18T15:36:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><h3 id="1-安装atom-https-atom-io-下载最新版本"><a href="#1-安装atom-https-atom-io-下载最新版本" class="headerlink" title="1.安装atom https://atom.io/,下载最新版本."></a>1.安装atom <a href="https://atom.io/" target="_blank" rel="external">https://atom.io/</a>,下载最新版本.</h3><h3 id="2-Nuclide常规安装"><a href="#2-Nuclide常规安装" class="headerlink" title="2.Nuclide常规安装"></a>2.Nuclide常规安装</h3><p>Nuclide项目官方地址:<a href="https://github.com/facebook/nuclide" target="_blank" rel="external">https://github.com/facebook/nuclide</a></p>
+<p>点击Atom-&gt;Preferences打开Setting,然后点击install，输入nuclide搜索，进行下载即可</p>
+<p><code>上面安装方式比较慢,更推荐源码安装</code>:</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">clone</span>  <span class="title">https</span>://github.com/facebook/nuclide.git</div><div class="line">cd  nuclide</div><div class="line">npm install</div><div class="line">apm link</div></pre></td></tr></table></figure>
+<h3 id="3-Nuclide常规配置"><a href="#3-Nuclide常规配置" class="headerlink" title="3.Nuclide常规配置"></a>3.Nuclide常规配置</h3><h4 id="1-搜索“nuclide”，点击“Settings”"><a href="#1-搜索“nuclide”，点击“Settings”" class="headerlink" title="1.搜索“nuclide”，点击“Settings”"></a>1.搜索“nuclide”，点击“Settings”</h4><p>选中:intall recommmended packages on startup<br>关闭 Atom ,重新打开.</p>
+<h4 id="2-安装watchman-和-flow"><a href="#2-安装watchman-和-flow" class="headerlink" title="2.安装watchman 和 flow"></a>2.安装watchman 和 flow</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>watchman</div><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>flow</div><div class="line">npm <span class="keyword">install </span>fbjs</div></pre></td></tr></table></figure>
+<p>如果安装过，可以更新一下</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span>upgrade watchman</div><div class="line"><span class="keyword">brew </span>upgrade flow</div></pre></td></tr></table></figure>
+<h4 id="3-常用插件"><a href="#3-常用插件" class="headerlink" title="3.常用插件"></a>3.常用插件</h4><p>禁用自带的<code>nuclide-format-js</code></p>
+<p>下载格式化<a href="https://atom.io/packages/atom-beautify" target="_blank" rel="external">https://atom.io/packages/atom-beautify</a><br>jsx里面开启</p>
+<p>消除atom 中间的线设置里面的atom-&gt;stylesheet添加下面代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">atom-text-editor</span><span class="selector-pseudo">::shadow</span> <span class="selector-class">.wrap-guide</span> &#123;</div><div class="line">  <span class="attribute">visibility</span>: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><a href="http://www.lcode.org/%E3%80%90react-native%E5%BC%80%E5%8F%91%E3%80%91react-native%E5%BC%80%E5%8F%91ide%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/" target="_blank" rel="external">参考1</a></p>
+<p><a href="http://www.hangge.com/blog/cache/detail_1490.html#" target="_blank" rel="external">参考2</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装环境&quot;&gt;&lt;a href=&quot;#安装环境&quot; class=&quot;headerlink&quot; title=&quot;安装环境&quot;&gt;&lt;/a&gt;安装环境&lt;/h2&gt;&lt;h3 id=&quot;1-安装atom-https-atom-io-下载最新版本&quot;&gt;&lt;a href=&quot;#1-安装atom-https-a
     
     </summary>
     
