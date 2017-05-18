@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sukeyang.github.io/"/>
-  <updated>2017-02-28T12:29:09.000Z</updated>
+  <updated>2017-03-12T12:03:43.000Z</updated>
   <id>https://sukeyang.github.io/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="https://sukeyang.github.io/2017/02/28/Masonry%E8%A7%A3%E6%9E%90/"/>
     <id>https://sukeyang.github.io/2017/02/28/Masonry解析/</id>
     <published>2017-02-28T01:41:10.000Z</published>
-    <updated>2017-02-28T12:29:09.000Z</updated>
+    <updated>2017-03-12T12:03:43.000Z</updated>
     
     <summary type="html">
     
     </summary>
     
-      <category term="ios,技巧,tools,js,原理&lt;!--选一个--&gt;" scheme="https://sukeyang.github.io/categories/ios-%E6%8A%80%E5%B7%A7-tools-js-%E5%8E%9F%E7%90%86-%E9%80%89%E4%B8%80%E4%B8%AA/"/>
+      <category term="原理" scheme="https://sukeyang.github.io/categories/%E5%8E%9F%E7%90%86/"/>
     
     
   </entry>
@@ -404,7 +404,7 @@ function (count) {
     <link href="https://sukeyang.github.io/2017/02/06/2016%E6%80%BB%E7%BB%93/"/>
     <id>https://sukeyang.github.io/2017/02/06/2016总结/</id>
     <published>2017-02-06T04:00:58.000Z</published>
-    <updated>2017-02-27T12:31:10.000Z</updated>
+    <updated>2017-04-14T17:58:25.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="生活上"><a href="#生活上" class="headerlink" title="生活上"></a>生活上</h2><p>减肥5kg,少吃肉类,鱼类<br>看电影5次 电影院<br>看书5本 包括js 还有es6,微信小程序等内容<br>微信个人公众号<br><a id="more"></a><br>后台开发初识<br>出去旅游3次,包括北京周边<br>开通自己的博客或者简书写博客10篇内容<br>听书 鬼吹灯全集 不算书</p>
 <h2 id="工作上"><a href="#工作上" class="headerlink" title="工作上"></a>工作上</h2><p>keynote 的制作等<br>做分享 3次 ,<br>工资提升<br>提升用户到2k 活跃到2w 更新内容,10次,每月都的多100人.<br>页面的优化</p>
@@ -600,7 +600,7 @@ var component = React.createClass();
     <link href="https://sukeyang.github.io/2016/10/01/UIAlertView%E4%B8%8D%E6%B6%88%E5%A4%B1/"/>
     <id>https://sukeyang.github.io/2016/10/01/UIAlertView不消失/</id>
     <published>2016-10-01T09:56:13.000Z</published>
-    <updated>2017-02-20T12:00:53.000Z</updated>
+    <updated>2017-04-14T17:58:25.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>今天遇见一个奇怪的bug,当我的UIAlertView 消失的时候键盘弹出来了,这个只出现在第一次安装的时候<br>万能的<a href="http://stackoverflow.com/questions/32744209/ios-9-keyboard-pops-up-after-uialertview-dismissed" target="_blank" rel="external">stackoverflow</a>上面有这个问题的一些解决方案:</strong></p>
 <p>1.使用新的api,UIAlertController</p>
@@ -629,7 +629,7 @@ var component = React.createClass();
     <link href="https://sukeyang.github.io/2016/09/06/Link%20Binary%20With/"/>
     <id>https://sukeyang.github.io/2016/09/06/Link Binary With/</id>
     <published>2016-09-06T04:00:58.000Z</published>
-    <updated>2017-02-20T12:00:53.000Z</updated>
+    <updated>2017-04-14T17:58:25.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Xcode中Link-Binary-With-Libraries-Status-Required-or-Optional"><a href="#Xcode中Link-Binary-With-Libraries-Status-Required-or-Optional" class="headerlink" title="Xcode中Link Binary With Libraries Status Required or Optional"></a>Xcode中Link Binary With Libraries Status Required or Optional</h2><p>Libraries and frameworks are designated as Required by default, but you can change this designation to Optional. Required libraries must be present on the host computer for the product to load. Optional libraries do not have to be present for the product to load. A Required framework will always be loaded into memory, but an Optional framework will be loaded only if needed. The initial load of the application will be faster if a large library that is never needed is designated as Optional.<br><a id="more"></a></p>
 <h5 id="内容-在指定设备上根据系统版本选择加载framework-状态-否则会出现崩溃-常见-需要-Optional-否则会在低版本系统ios7下崩溃"><a href="#内容-在指定设备上根据系统版本选择加载framework-状态-否则会出现崩溃-常见-需要-Optional-否则会在低版本系统ios7下崩溃" class="headerlink" title="内容:在指定设备上根据系统版本选择加载framework 状态,否则会出现崩溃.常见 需要 Optional,否则会在低版本系统ios7下崩溃."></a>内容:在指定设备上根据系统版本选择加载framework 状态,否则会出现崩溃.常见 <notficationcenter.framework>需要 Optional,否则会在低版本系统ios7下崩溃.</notficationcenter.framework></h5>]]></content>
@@ -684,27 +684,24 @@ var component = React.createClass();
     <link href="https://sukeyang.github.io/2016/08/02/CocoaPods%E5%AE%89%E8%A3%85/"/>
     <id>https://sukeyang.github.io/2016/08/02/CocoaPods安装/</id>
     <published>2016-08-02T08:40:33.000Z</published>
-    <updated>2017-02-20T12:00:53.000Z</updated>
+    <updated>2017-04-14T17:58:25.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="1-gem-install-cocoapods"><a href="#1-gem-install-cocoapods" class="headerlink" title="1.gem install cocoapods"></a>1.gem install cocoapods</h1><pre><code>ERROR:  While executing gem ... (Errno::EPERM)
-Operation not permitted - /usr/bin/pod
-</code></pre><p>  用下面命名安装<br>  <a id="more"></a><br>    sudo gem install -n /usr/local/bin cocoapods</p>
-<h1 id="2-更换更新数据源国内镜像-每天都更新code-net"><a href="#2-更换更新数据源国内镜像-每天都更新code-net" class="headerlink" title="2.更换更新数据源国内镜像,每天都更新code.net"></a>2.更换更新数据源国内镜像,每天都更新<a href="https://git.coding.net/CocoaPods/Specs.git" target="_blank" rel="external">code.net</a></h1><pre><code>pod repo remove master
-pod repo add master https://git.coding.net/CocoaPods/Specs.git    
-pod setup
-</code></pre><h1 id="3-常用更新安装命名-不进行本地库更新"><a href="#3-常用更新安装命名-不进行本地库更新" class="headerlink" title="3.常用更新安装命名,不进行本地库更新"></a>3.常用更新安装命名,不进行本地库更新</h1><p>更新</p>
+    <content type="html"><![CDATA[<h1 id="1-gem-install-cocoapods"><a href="#1-gem-install-cocoapods" class="headerlink" title="1.gem install cocoapods"></a>1.gem install cocoapods</h1><figure class="highlight subunit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ERROR:  </span>While executing gem ... (Errno::EPERM)</div><div class="line">Operation not permitted - /usr/bin/pod</div></pre></td></tr></table></figure>
+<p>用下面命名安装</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gem <span class="keyword">install</span> -n /usr/<span class="keyword">local</span>/<span class="keyword">bin</span> cocoapods</div></pre></td></tr></table></figure>
+<h1 id="2-更换更新数据源国内镜像-每天都更新code-net"><a href="#2-更换更新数据源国内镜像-每天都更新code-net" class="headerlink" title="2.更换更新数据源国内镜像,每天都更新code.net"></a>2.更换更新数据源国内镜像,每天都更新<a href="https://git.coding.net/CocoaPods/Specs.git" target="_blank" rel="external">code.net</a></h1><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pod repo remove <span class="keyword">master</span></div><div class="line"><span class="title">pod</span> repo add <span class="keyword">master</span> <span class="title">https</span>://git.coding.net/CocoaPods/Specs.git    </div><div class="line">pod setup</div></pre></td></tr></table></figure>
+<p>安装自己的私有仓库pod</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod repo <span class="keyword">add</span> sdkMaster https:<span class="comment">//gitlab.coding.net/Specs.git</span></div></pre></td></tr></table></figure>
+<h1 id="3-常用更新安装命名-不进行本地库更新"><a href="#3-常用更新安装命名-不进行本地库更新" class="headerlink" title="3.常用更新安装命名,不进行本地库更新"></a>3.常用更新安装命名,不进行本地库更新</h1><p>更新pod</p>
 <pre><code>pod update --verbose --no-repo-update 
-</code></pre><p>安装</p>
+</code></pre><p>安装pod命令</p>
 <pre><code>pod install --verbose --no-repo-update
-</code></pre><h1 id="4-安装和卸载pod"><a href="#4-安装和卸载pod" class="headerlink" title="4 安装和卸载pod"></a>4 安装和卸载pod</h1><pre><code>sudo gem uninstall cocoapods  卸载
-sudo gem install cocoapods    指定版本追加(-v 0.39) 安装
-</code></pre>]]></content>
+</code></pre><h1 id="4-安装和卸载pod"><a href="#4-安装和卸载pod" class="headerlink" title="4 安装和卸载pod"></a>4 安装和卸载pod</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo gem <span class="keyword">uninstall</span> cocoapods  卸载</div><div class="line">sudo gem <span class="keyword">install</span> cocoapods    指定版本追加(-v <span class="number">0.39</span>) 安装</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;1-gem-install-cocoapods&quot;&gt;&lt;a href=&quot;#1-gem-install-cocoapods&quot; class=&quot;headerlink&quot; title=&quot;1.gem install cocoapods&quot;&gt;&lt;/a&gt;1.gem install cocoapods&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;ERROR:  While executing gem ... (Errno::EPERM)
-Operation not permitted - /usr/bin/pod
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  用下面命名安装&lt;br&gt;
+      &lt;h1 id=&quot;1-gem-install-cocoapods&quot;&gt;&lt;a href=&quot;#1-gem-install-cocoapods&quot; class=&quot;headerlink&quot; title=&quot;1.gem install cocoapods&quot;&gt;&lt;/a&gt;1.gem install coc
     
     </summary>
     
@@ -718,11 +715,100 @@ Operation not permitted - /usr/bin/pod
   </entry>
   
   <entry>
+    <title>Atom+Nuclide开发工具(React Native)</title>
+    <link href="https://sukeyang.github.io/2016/07/27/Atom+Nuclide%E7%8E%AF%E5%A2%83/"/>
+    <id>https://sukeyang.github.io/2016/07/27/Atom+Nuclide环境/</id>
+    <published>2016-07-27T03:48:30.000Z</published>
+    <updated>2017-05-18T14:39:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><h3 id="1-安装atom-https-atom-io-下载最新版本"><a href="#1-安装atom-https-atom-io-下载最新版本" class="headerlink" title="1.安装atom https://atom.io/,下载最新版本."></a>1.安装atom <a href="https://atom.io/" target="_blank" rel="external">https://atom.io/</a>,下载最新版本.</h3><h3 id="2-Nuclide常规安装"><a href="#2-Nuclide常规安装" class="headerlink" title="2.Nuclide常规安装"></a>2.Nuclide常规安装</h3><p>Nuclide项目官方地址:<a href="https://github.com/facebook/nuclide" target="_blank" rel="external">https://github.com/facebook/nuclide</a></p>
+<p>点击Atom-&gt;Preferences打开Setting,然后点击install，输入nuclide搜索，进行下载即可</p>
+<p><code>上面安装方式比较慢,更推荐源码安装</code>:</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">clone</span>  <span class="title">https</span>://github.com/facebook/nuclide.git</div><div class="line">cd  nuclide</div><div class="line">npm install</div><div class="line">apm link</div></pre></td></tr></table></figure>
+<h3 id="3-Nuclide常规配置"><a href="#3-Nuclide常规配置" class="headerlink" title="3.Nuclide常规配置"></a>3.Nuclide常规配置</h3><h4 id="1-搜索“nuclide”，点击“Settings”"><a href="#1-搜索“nuclide”，点击“Settings”" class="headerlink" title="1.搜索“nuclide”，点击“Settings”"></a>1.搜索“nuclide”，点击“Settings”</h4><p>选中:intall recommmended packages on startup<br>关闭 Atom ,重新打开.</p>
+<h4 id="2-安装watchman-和-flow"><a href="#2-安装watchman-和-flow" class="headerlink" title="2.安装watchman 和 flow"></a>2.安装watchman 和 flow</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>watchman</div><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>flow</div><div class="line">npm <span class="keyword">install </span>fbjs</div></pre></td></tr></table></figure>
+<p>如果安装过，可以更新一下</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span>upgrade watchman</div><div class="line"><span class="keyword">brew </span>upgrade flow</div></pre></td></tr></table></figure>
+<h4 id="3-常用插件"><a href="#3-常用插件" class="headerlink" title="3.常用插件"></a>3.常用插件</h4><p>禁用自带的<code>nuclide-format-js</code></p>
+<p>下载格式化<a href="https://atom.io/packages/atom-beautify" target="_blank" rel="external">https://atom.io/packages/atom-beautify</a><br>jsx里面开启</p>
+<p>消除atom 中间的线设置里面的atom-&gt;stylesheet添加下面代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">atom-text-editor</span><span class="selector-pseudo">::shadow</span> <span class="selector-class">.wrap-guide</span> &#123;</div><div class="line">  <span class="attribute">visibility</span>: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><a href="http://www.lcode.org/%E3%80%90react-native%E5%BC%80%E5%8F%91%E3%80%91react-native%E5%BC%80%E5%8F%91ide%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/" target="_blank" rel="external">参考1</a></p>
+<p><a href="http://www.hangge.com/blog/cache/detail_1490.html#" target="_blank" rel="external">参考2</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装环境&quot;&gt;&lt;a href=&quot;#安装环境&quot; class=&quot;headerlink&quot; title=&quot;安装环境&quot;&gt;&lt;/a&gt;安装环境&lt;/h2&gt;&lt;h3 id=&quot;1-安装atom-https-atom-io-下载最新版本&quot;&gt;&lt;a href=&quot;#1-安装atom-https-a
+    
+    </summary>
+    
+      <category term="tools" scheme="https://sukeyang.github.io/categories/tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>autojum和zsh使用MAC</title>
+    <link href="https://sukeyang.github.io/2016/07/27/autojump%E5%92%8Czsh%E4%BD%BF%E7%94%A8MAC/"/>
+    <id>https://sukeyang.github.io/2016/07/27/autojump和zsh使用MAC/</id>
+    <published>2016-07-27T03:48:30.000Z</published>
+    <updated>2017-05-18T14:34:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装oh-my-zsh环境"><a href="#安装oh-my-zsh环境" class="headerlink" title="安装oh my zsh环境"></a>安装oh my zsh环境</h2><h3 id="1-安装wget-http-ftp-gnu-org-gnu-wget-下载最新版本"><a href="#1-安装wget-http-ftp-gnu-org-gnu-wget-下载最新版本" class="headerlink" title="1.安装wget http://ftp.gnu.org/gnu/wget/,下载最新版本."></a>1.安装wget <a href="http://ftp.gnu.org/gnu/wget/" target="_blank" rel="external">http://ftp.gnu.org/gnu/wget/</a>,下载最新版本.</h3><h3 id="2-解压缩-cd到目录文件夹-依次执行命令"><a href="#2-解压缩-cd到目录文件夹-依次执行命令" class="headerlink" title="2.解压缩,cd到目录文件夹,依次执行命令"></a>2.解压缩,cd到目录文件夹,依次执行命令</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">./configure --with-ssl=openssl</div><div class="line"><span class="built_in">make</span></div><div class="line">sudo <span class="built_in">make</span> install</div></pre></td></tr></table></figure>
+<p><code>备注:</code>出现错误</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">checking host <span class="keyword">system</span> <span class="built_in">type</span>... configure: <span class="built_in">error</span>: can <span class="keyword">not</span> guess host <span class="built_in">type</span>; you must specify one</div></pre></td></tr></table></figure>
+<p>执行下面的命令</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">.</span><span class="comment">/configure</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">with</span><span class="literal">-</span><span class="comment">ssl=openssl</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">host=TARGET</span></div></pre></td></tr></table></figure>
+<h3 id="3-自动安装"><a href="#3-自动安装" class="headerlink" title="3.自动安装"></a>3.自动安装</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https:<span class="regexp">//gi</span>thub.com<span class="regexp">/robbyrussell/</span>oh-my-zsh<span class="regexp">/raw/m</span>aster<span class="regexp">/tools/i</span>nstall.sh -O - | sh</div></pre></td></tr></table></figure>
+<p>或者手动安装</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone <span class="symbol">git:</span>/<span class="regexp">/github.com/robbyrussell</span><span class="regexp">/oh-my-zsh.git ~/</span>.oh-my-zsh</div><div class="line">cp ~<span class="regexp">/.oh-my-zsh/templates</span><span class="regexp">/zshrc.zsh-template ~/</span>.zshrc</div></pre></td></tr></table></figure>
+<p>成功后退出页面重新打开终端.</p>
+<p><code>备注:</code>如果没有变化可以执行切换</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">zsh</span></div></pre></td></tr></table></figure>
+<p>配置文件在<code>~/.zshrc</code>里面</p>
+<h3 id="4-切换shell"><a href="#4-切换shell" class="headerlink" title="4.切换shell"></a>4.切换shell</h3><p>用如下命令切换shell: </p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s <span class="regexp">/bin/</span>zsh</div></pre></td></tr></table></figure>
+<p>重启terminal就好啦，应该就成功的从bash切换到zsh了:)</p>
+<p>查看当前使用的shell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$SHELL</span></div></pre></td></tr></table></figure>
+<p>如果你想看看自己的机子上装了哪些shell，可以使用如下命令：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat <span class="regexp">/etc/</span>shells</div></pre></td></tr></table></figure>
+<h2 id="安装autojump"><a href="#安装autojump" class="headerlink" title="安装autojump"></a>安装autojump</h2><h4 id="1-执行命令自动安装"><a href="#1-执行命令自动安装" class="headerlink" title="1.执行命令自动安装"></a>1.执行命令自动安装</h4><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">brew </span><span class="keyword">install </span>autojump</div></pre></td></tr></table></figure>
+<p>或者手动安装</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https:<span class="regexp">//gi</span>thub.com<span class="regexp">/downloads/</span>joelthelion<span class="regexp">/autojump/</span>autojump_v21.<span class="number">1.2</span>.tar.gz</div></pre></td></tr></table></figure>
+<p>解压后进入目录,执行</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./<span class="keyword">install</span>.sh</div></pre></td></tr></table></figure>
+<p>最后把以下代码加入<code>~/.zshrc</code>：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">[[ -s `brew --prefix`/etc/autojump.sh ]]</span> &amp;&amp; . `brew <span class="comment">--prefix`/etc/autojump.sh</span></div></pre></td></tr></table></figure>
+<p>使用是</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">j</span> xxx文件夹</div></pre></td></tr></table></figure>
+<h2 id="自定义设置"><a href="#自定义设置" class="headerlink" title="自定义设置"></a>自定义设置</h2><p>对RN的命名简化,在<code>~/.zshrc</code>里面最后添加</p>
+<figure class="highlight monkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">alias</span> <span class="title">rna</span>=<span class="string">"react-native run-android"</span></div><div class="line"><span class="keyword">alias</span> <span class="title">rni</span>=<span class="string">"react-native run-ios"</span></div></pre></td></tr></table></figure>
+<p>以后就可以使用<code>rna ``rni</code>运行了</p>
+<hr>
+<p><a href="https://zhuanlan.zhihu.com/p/19556676?columnSlug=mactalk" target="_blank" rel="external">参考1</a></p>
+<p><a href="http://blog.csdn.net/hejisan/article/details/50432993" target="_blank" rel="external">参考2</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装oh-my-zsh环境&quot;&gt;&lt;a href=&quot;#安装oh-my-zsh环境&quot; class=&quot;headerlink&quot; title=&quot;安装oh my zsh环境&quot;&gt;&lt;/a&gt;安装oh my zsh环境&lt;/h2&gt;&lt;h3 id=&quot;1-安装wget-http-ftp-gnu
+    
+    </summary>
+    
+      <category term="tools" scheme="https://sukeyang.github.io/categories/tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>git使用技巧</title>
     <link href="https://sukeyang.github.io/2016/07/20/git%E4%BD%BF%E7%94%A8/"/>
     <id>https://sukeyang.github.io/2016/07/20/git使用/</id>
     <published>2016-07-20T01:55:28.000Z</published>
-    <updated>2017-02-21T13:32:58.000Z</updated>
+    <updated>2017-03-06T15:20:19.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="ssh-key的作用"><a href="#ssh-key的作用" class="headerlink" title="ssh-key的作用"></a>ssh-key的作用</h2><p>我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，<br>也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。</p>
 <h2 id="解决本地多个ssh-key的配置"><a href="#解决本地多个ssh-key的配置" class="headerlink" title="解决本地多个ssh-key的配置"></a>解决本地多个ssh-key的配置</h2><p>1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件</p>
@@ -733,98 +819,30 @@ Operation not permitted - /usr/bin/pod
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span></div></pre></td></tr></table></figure>
 <p>返回成功</p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi sukeyang! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</div></pre></td></tr></table></figure>
-<p>1.提示 WARNING: UNPROTECTED PRIVATE KEY FILE!  </p>
+<ul>
+<li>1.提示 WARNING: UNPROTECTED PRIVATE KEY FILE!  </li>
+</ul>
 <figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@</span></div><div class="line">@         WARNING: UNPROTECTED PRIVATE <span class="built_in">KEY</span> FILE!          <span class="comment">@</span></div><div class="line">@<span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span><span class="comment">@@</span></div><div class="line">Permissions <span class="number">0644</span> <span class="keyword">for</span> '/Users/yangshuo/.ssh/winid_rsa' are too <span class="keyword">open</span>.</div><div class="line">It is required that your private <span class="built_in">key</span> files are <span class="keyword">NOT</span> accessible by others.</div><div class="line">This private <span class="built_in">key</span> will be ignored.</div></pre></td></tr></table></figure>
-<p>解决办法：在命令行输入chmod 700 id_rsa.github即可。这里“id_rsa.githu”就是warning里给出的密钥文件名。<br>2.报错No submodule mapping found in .gitmodules for path;</p>
+<p>解决办法：在命令行输入chmod 700 id_rsa.github即可。这里“id_rsa.githu”就是warning里给出的密钥文件名。</p>
+<ul>
+<li>2.报错No submodule mapping found in .gitmodules for path;</li>
+</ul>
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git submodule status</div><div class="line">git rm --cached Classes/<span class="class"><span class="keyword">lib</span>/<span class="title">AFKissXMLRequestOperation</span></span></div></pre></td></tr></table></figure>
 <p>查看状态,Classes/lib/AFKissXMLRequestOperation<br>为要删除的路径,然后就oK了.</p>
-]]></content>
+<ul>
+<li>3.多帐号github配置<br>生成第二个ssh key,并按上面的方法进行测试</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.github</span> -C <span class="string">"Key for GitHub"</span></div></pre></td></tr></table></figure>
+<p>修改在.ssh/下创建config文件 内容如下：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Host github<span class="selector-class">.com</span>  </div><div class="line">    HostName github<span class="selector-class">.com</span>  </div><div class="line">    IdentityFile ~/.ssh/id_rsa  </div><div class="line">  </div><div class="line">Host my<span class="selector-class">.github</span><span class="selector-class">.com</span>  </div><div class="line">    HostName github<span class="selector-class">.com</span>  </div><div class="line">    IdentityFile ~/.ssh/my</div></pre></td></tr></table></figure>
+<p>进行验证</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">my</span>.<span class="keyword">github</span>.<span class="keyword">com</span></div></pre></td></tr></table></figure>
+<p>打开.Git/config文件,修改下面url地址就可以了</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#更改[remote <span class="string">"origin"</span>]项中的url中的  </div><div class="line"><span class="selector-id">#my</span><span class="selector-class">.github</span><span class="selector-class">.com</span> 对应上面配置的host  </div><div class="line">[remote <span class="string">"origin"</span>]  </div><div class="line">    url = git@my<span class="selector-class">.github</span><span class="selector-class">.com</span>:itmyline/blog.git</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;ssh-key的作用&quot;&gt;&lt;a href=&quot;#ssh-key的作用&quot; class=&quot;headerlink&quot; title=&quot;ssh-key的作用&quot;&gt;&lt;/a&gt;ssh-key的作用&lt;/h2&gt;&lt;p&gt;我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，&lt;br&gt;也
-    
-    </summary>
-    
-      <category term="tools" scheme="https://sukeyang.github.io/categories/tools/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>升级iOS10后，部分App更新之后无法联网怎么办？</title>
-    <link href="https://sukeyang.github.io/2016/07/03/%E9%83%A8%E5%88%86App%E6%9B%B4%E6%96%B0%E6%97%A0%E6%B3%95%E8%81%94%E7%BD%91/"/>
-    <id>https://sukeyang.github.io/2016/07/03/部分App更新无法联网/</id>
-    <published>2016-07-03T04:00:58.000Z</published>
-    <updated>2017-03-02T16:02:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>苹果在iOS10中，增加了“使用无线局域网与蜂窝移动应用”的功能。有些App升级后默认关闭了数据使用，导致无法联网</strong></p>
-<h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1:"></a>方法1:</h3><p>进入“设置-&gt;蜂窝移动网络-&gt;使用无线局域网与蜂窝移动的应用”（或者“设置-&gt;无线局域网-&gt;使用无线局域网与蜂窝移动的应用”），找到无法联网的App，允许其“使用数据”即可。</p>
-<h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2:"></a>方法2:</h3><p>另外还有一种Bug情况：在该列表中找不到这款无法联网的App。</p>
-<ul>
-<li><p>此时，在列表中任意选择一个App，先关闭“无线局域网与蜂窝移动数据“，即不允许其使用数据。然后再重新打开允许使用“无线局域网与蜂窝移动数据”。</p>
-</li>
-<li><p>返回桌面，再次打开刚才无法联网的App，这时候系统会提示“是否允许App使用数据网络”，点击“允许”，App即可顺利联网使用。</p>
-</li>
-</ul>
-<h3 id="方法3"><a href="#方法3" class="headerlink" title="方法3:"></a>方法3:</h3><p>重启手机,进入app,会进行提示!</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;苹果在iOS10中，增加了“使用无线局域网与蜂窝移动应用”的功能。有些App升级后默认关闭了数据使用，导致无法联网&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&quot;方法1&quot;&gt;&lt;a href=&quot;#方法1&quot; class=&quot;headerlink&quot; title=&quot;方法1:
-    
-    </summary>
-    
-      <category term="iphone" scheme="https://sukeyang.github.io/categories/iphone/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>GitHub + Hexo 搭建博客总结(二)</title>
-    <link href="https://sukeyang.github.io/2016/06/07/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA2/"/>
-    <id>https://sukeyang.github.io/2016/06/07/博客搭建2/</id>
-    <published>2016-06-07T09:34:35.000Z</published>
-    <updated>2017-03-02T16:03:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-创建分类"><a href="#1-创建分类" class="headerlink" title="1.创建分类"></a>1.创建分类</h3><p>建立分类文件夹</p>
-<pre><code>hexo new page categories
-</code></pre><p>xxx.md 头部写成这样</p>
-<pre><code>title: GitHub + Hexo 搭建博客总结(二)
-date: 2017-02-07 17:34:35
-tags:
-categories: 
-   tools    
-</code></pre><h3 id="2-底部统计"><a href="#2-底部统计" class="headerlink" title="2.底部统计"></a>2.底部统计</h3><p>安装脚本（必选）,<a href="http://wangcaiyong.com/2015/06/26/busuanzi/" target="_blank" rel="external">参考链接</a><br>打开themes/你的主题/layout/_partial/footer.pejs添加如下脚本即可。</p>
-<pre><code>&lt;script async src=&quot;https://dn-lbstatics.qbox.me/    busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;
-&lt;/script&gt;
-</code></pre><h3 id="3-为Hexo-添加-Swiftype-站内搜索"><a href="#3-为Hexo-添加-Swiftype-站内搜索" class="headerlink" title="3.为Hexo 添加 Swiftype 站内搜索"></a>3.为Hexo 添加 Swiftype 站内搜索</h3><p>1.去 Swiftype<a href="https://swiftype.com/" target="_blank" rel="external">官网</a>注册好账号，然后点击 Create Engine，输入网址并填好名称，配置好后 Swiftype 会自动开始抓取网站数据，点击 Manage 下面的 Content ，就能看到抓取到的网站数据。<br>2.打开 Hexo 主题配置，以 jacman 为例，打开 jacman 目录下的 _config.yml 文件，在末尾添加</p>
-<pre><code>swift_search:     ## https://swiftype.com/
-enable: true
-id: ## 这里填写前面记下的 Swiftype id
-</code></pre><p>3.替换文件,在到 jacman\layout\/_partial 目录，打开 header.ejs 这个文件</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">%</span></span></span><span class="ruby"> &#125; <span class="keyword">else</span> <span class="keyword">if</span>(theme.baidu_search.enable)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"search"</span> <span class="attr">action</span>=<span class="string">"&lt;%-</span></span><span class="ruby"> theme.baidu_search.site </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>Search<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"s"</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">value</span>= &lt;%=</span><span class="ruby"> theme.baidu_search.id </span><span class="xml"><span class="tag">%&gt;</span> &gt;<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"q"</span> <span class="attr">size</span>=<span class="string">"30"</span> <span class="attr">placeholder</span>=<span class="string">"&lt;%=</span></span></span><span class="ruby"> _<span class="number">_</span>(<span class="string">'search'</span>) </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>在这段代码后边添加</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;% &#125; <span class="keyword">else</span> <span class="keyword">if</span>(theme.swift_search.enable)&#123; %&gt;</div><div class="line">&lt;<span class="keyword">form</span> <span class="keyword">class</span>=<span class="string">"search"</span> action=<span class="string">"&lt;%- config.root %&gt;search/index.html"</span> method=<span class="string">"get"</span> accept-charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">&lt;<span class="keyword">label</span>&gt;<span class="keyword">Search</span>&lt;/<span class="keyword">label</span>&gt;</div><div class="line">&lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"text"</span> id=<span class="string">"search"</span> <span class="keyword">class</span>=<span class="string">"st-default-search-input"</span> maxlength=<span class="string">"20"</span> placeholder=<span class="string">"Search"</span> /&gt;</div><div class="line">&lt;/<span class="keyword">form</span>&gt;</div></pre></td></tr></table></figure>
-<p>最后在文件最后一个前添加</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">(<span class="name">function</span>(<span class="name">w</span>,d,<span class="literal">t</span>,u,n,s,e)&#123;w['SwiftypeObject']=n<span class="comment">;w[n]=w[n]||function()&#123;</span></div><div class="line">(<span class="name">w</span>[n].q=w[n].q||[]).push(<span class="name">arguments</span>)<span class="comment">;&#125;;s=d.createElement(t);</span></div><div class="line">e=d.getElementsByTagName(<span class="name">t</span>)[<span class="number">0</span>]<span class="comment">;s.async=1;s.src=u;e.parentNode.insertBefore(s,e);</span></div><div class="line">&#125;)(<span class="name">window</span>,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st')<span class="comment">;</span></div><div class="line">_st('install','Zo1mzEpQeR6Xjr3hz4jd','<span class="number">2.0</span>.<span class="number">0</span>')<span class="comment">;</span></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h3 id="4-图片处理"><a href="#4-图片处理" class="headerlink" title="4.图片处理"></a>4.图片处理</h3><p>用七牛为 Hexo 存储图片<a href="http://clarkky.org/post/Hexo-Qiniu-Image-CDN/" target="_blank" rel="external">链接</a></p>
-<h3 id="5-开启统计"><a href="#5-开启统计" class="headerlink" title="5.开启统计"></a>5.开启统计</h3><p>hexo安装统计插件,<a href="http://www.cnblogs.com/tengj/p/5365434.html" target="_blank" rel="external">链接</a></p>
-<h3 id="6-首页文章展示摘要"><a href="#6-首页文章展示摘要" class="headerlink" title="6.首页文章展示摘要"></a>6.首页文章展示摘要</h3><p>该主题首页文章列表默认是全部展开，感觉不好，我关闭掉了，只展示少量摘要。<br>修改\themes\jacman下面_config.yml中的expand改成false即可</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">index:</span></div><div class="line"><span class="attr">  expand:</span> <span class="literal">false</span>           <span class="comment">## default is unexpanding,so you can only see the short description of each post.</span></div><div class="line"><span class="attr">  excerpt_link:</span> Read More</div></pre></td></tr></table></figure>
-<h3 id="7-配置模板文章"><a href="#7-配置模板文章" class="headerlink" title="7.配置模板文章"></a>7.配置模板文章</h3><p>我们可以修改根目录下\scaffolds\post.md文件，配置好基本的信息，比如：</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">title:</span> GitHub + Hexo 搭建博客总结(二)</div><div class="line"><span class="symbol">date:</span> <span class="number">1465292075000</span></div><div class="line"><span class="symbol">categories:</span> </div><div class="line">  tools</div></pre></td></tr></table></figure>
-<h3 id="8-代码显示不全等问题用下面方式避免-官网说明-链接"><a href="#8-代码显示不全等问题用下面方式避免-官网说明-链接" class="headerlink" title="8.代码显示不全等问题用下面方式避免,官网说明,链接"></a>8.代码显示不全等问题用下面方式避免,官网说明,<a href="https://hexo.io/docs/tag-plugins.html#Raw" target="_blank" rel="external">链接</a></h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;% codeblock lang:objc %&#125;</div><div class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</div><div class="line">&#123;% endcodeblock %&#125;</div><div class="line">```	</div><div class="line"></div><div class="line">### <span class="number">9.</span>执行的命令-bash: hexo: command not found解决办法</div></pre></td></tr></table></figure>
-<p>npm install -g hexo-cli<br>/usr/local/bin/node /usr/local/lib/node_modules/hexo-cli/bin/hexo  clean<br>```</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-创建分类&quot;&gt;&lt;a href=&quot;#1-创建分类&quot; class=&quot;headerlink&quot; title=&quot;1.创建分类&quot;&gt;&lt;/a&gt;1.创建分类&lt;/h3&gt;&lt;p&gt;建立分类文件夹&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hexo new page categories
-&lt;/code
     
     </summary>
     
