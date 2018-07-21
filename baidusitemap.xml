@@ -4,8 +4,98 @@
 
     
   <url>
+    <loc>https://sukeyang.github.io/2016/07/27/autojump%E5%92%8Czsh%E4%BD%BF%E7%94%A8MAC/</loc>
+    <lastmod>2018-07-21T04:57:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>autojum和zsh使用MAC</title>
+        <pubTime>2016-07-27T03:48:30.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2016/07/20/git%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-07-21T04:57:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>git使用技巧</title>
+        <pubTime>2016-07-20T01:55:28.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2017/06/28/hexo%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2018-07-21T04:57:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>hexo错误记录</title>
+        <pubTime>2017-06-28T02:38:46.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="小技巧" url="https://sukeyang.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2018/07/19/%E8%BD%AC%E5%9C%BA%E5%8A%A8%E7%94%BB/</loc>
+    <lastmod>2018-07-21T04:57:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>iOS 视图控制器转场详解</title>
+        <pubTime>2018-07-19T08:23:50.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="ios" url="https://sukeyang.github.io/categories/ios/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2018/05/04/%E6%96%B0mac,ruby%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-07-21T04:57:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>新mac 环境配置</title>
+        <pubTime>2018-05-04T06:36:45.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="ios,技巧,tools,js,原理,iphone,小技巧&lt;!--选一个--&gt;" url="https://sukeyang.github.io/categories/ios-%E6%8A%80%E5%B7%A7-tools-js-%E5%8E%9F%E7%90%86-iphone-%E5%B0%8F%E6%8A%80%E5%B7%A7-%E9%80%89%E4%B8%80%E4%B8%AA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://sukeyang.github.io/2017/07/09/nvm%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
+    <lastmod>2018-05-05T18:20:28.000Z</lastmod>
     <data>
         <display>
         <title>nvm使用记录</title>
@@ -15,6 +105,24 @@
            
              
               <breadCrumb title="小技巧" url="https://sukeyang.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2017/10/26/googgle-cloud-%E6%90%AD%E5%BB%BAssr/</loc>
+    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>googgle cloud 搭建ssr 免费使用一年</title>
+        <pubTime>2017-10-26T02:21:24.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
           
         </display>
     </data>
@@ -40,6 +148,42 @@
 
     
   <url>
+    <loc>https://sukeyang.github.io/2017/09/01/auto-layout-VFL%E8%A7%84%E5%88%99/</loc>
+    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>auto layout VFL规则</title>
+        <pubTime>2017-09-01T08:12:40.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="ios" url="https://sukeyang.github.io/categories/ios/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2017/04/20/cocopods-%E7%A7%81%E6%9C%89%E5%BA%93/</loc>
+    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>CocoaPods 私有库</title>
+        <pubTime>2017-04-20T02:10:36.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://sukeyang.github.io/2016/07/27/Atom+Nuclide%E7%8E%AF%E5%A2%83/</loc>
     <lastmod>2018-05-05T18:11:42.000Z</lastmod>
     <data>
@@ -51,24 +195,6 @@
            
              
               <breadCrumb title="BFE" url="https://sukeyang.github.io/categories/BFE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2018/05/04/%E6%96%B0mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>新mac环境配置</title>
-        <pubTime>2018-05-04T06:36:45.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="ios,技巧,tools,js,原理,iphone,小技巧&lt;!--选一个--&gt;" url="https://sukeyang.github.io/categories/ios-%E6%8A%80%E5%B7%A7-tools-js-%E5%8E%9F%E7%90%86-iphone-%E5%B0%8F%E6%8A%80%E5%B7%A7-%E9%80%89%E4%B8%80%E4%B8%AA/"/>
           
         </display>
     </data>
@@ -98,42 +224,6 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2016/12/18/%E6%96%90%E8%AE%AFk2%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>斐讯k2路由器刷华硕固件</title>
-        <pubTime>2016-12-18T07:36:25.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="小技巧" url="https://sukeyang.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2017/02/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>数据库知识</title>
-        <pubTime>2017-02-13T09:52:01.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="js" url="https://sukeyang.github.io/categories/js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://sukeyang.github.io/2016/12/15/ReactNative%E9%94%99%E8%AF%AF%E6%94%B6%E9%9B%86(iOS)/</loc>
     <lastmod>2018-05-05T18:11:42.000Z</lastmod>
     <data>
@@ -145,114 +235,6 @@
            
              
               <breadCrumb title="BFE" url="https://sukeyang.github.io/categories/BFE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2017/06/30/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>常用软件配置同步</title>
-        <pubTime>2017-06-30T02:27:14.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="技巧" url="https://sukeyang.github.io/categories/%E6%8A%80%E5%B7%A7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2017/08/08/andriod%E6%89%93%E5%8C%85%E7%9B%B8%E5%85%B3/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>andriod打包相关</title>
-        <pubTime>2017-08-08T03:34:21.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="js" url="https://sukeyang.github.io/categories/js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2017/09/01/auto-layout-VFL%E8%A7%84%E5%88%99/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>auto layout VFL规则</title>
-        <pubTime>2017-09-01T08:12:40.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="ios" url="https://sukeyang.github.io/categories/ios/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2016/07/27/autojump%E5%92%8Czsh%E4%BD%BF%E7%94%A8MAC/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>autojum和zsh使用MAC</title>
-        <pubTime>2016-07-27T03:48:30.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2017/04/20/cocopods-%E7%A7%81%E6%9C%89%E5%BA%93/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>CocoaPods 私有库</title>
-        <pubTime>2017-04-20T02:10:36.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2017/07/27/%E9%87%8D%E6%96%B0testflight%E9%82%80%E8%AF%B7/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>重新发送testflight邀请</title>
-        <pubTime>2017-07-27T08:25:02.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="ios" url="https://sukeyang.github.io/categories/ios/"/>
           
         </display>
     </data>
@@ -278,17 +260,17 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2016/07/20/git%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://sukeyang.github.io/2017/07/27/%E9%87%8D%E6%96%B0testflight%E9%82%80%E8%AF%B7/</loc>
     <lastmod>2018-05-05T18:11:42.000Z</lastmod>
     <data>
         <display>
-        <title>git使用技巧</title>
-        <pubTime>2016-07-20T01:55:28.000Z</pubTime>
+        <title>重新发送testflight邀请</title>
+        <pubTime>2017-07-27T08:25:02.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
+              <breadCrumb title="ios" url="https://sukeyang.github.io/categories/ios/"/>
           
         </display>
     </data>
@@ -296,53 +278,17 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2017/10/26/googgle-cloud-%E6%90%AD%E5%BB%BAssr/</loc>
+    <loc>https://sukeyang.github.io/2018/04/10/%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3,%E6%B8%85%E7%90%86Mac%E7%A9%BA%E9%97%B4/</loc>
     <lastmod>2018-05-05T18:11:42.000Z</lastmod>
     <data>
         <display>
-        <title>googgle cloud 搭建ssr 免费使用一年</title>
-        <pubTime>2017-10-26T02:21:24.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2017/06/28/hexo%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo错误记录</title>
-        <pubTime>2017-06-28T02:38:46.000Z</pubTime>
+        <title>空间不足,清理Mac空间</title>
+        <pubTime>2018-04-10T01:34:18.000Z</pubTime>
         
          
            
              
               <breadCrumb title="小技巧" url="https://sukeyang.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2016/06/04/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>GitHub + Hexo 搭建博客总结(一)</title>
-        <pubTime>2016-06-04T08:40:33.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
           
         </display>
     </data>
@@ -386,24 +332,6 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2018/04/10/%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3,%E6%B8%85%E7%90%86Mac%E7%A9%BA%E9%97%B4/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>空间不足,清理Mac空间</title>
-        <pubTime>2018-04-10T01:34:18.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="小技巧" url="https://sukeyang.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://sukeyang.github.io/2018/04/11/2017%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2018-05-05T18:11:42.000Z</lastmod>
     <data>
@@ -415,24 +343,6 @@
            
              
               <breadCrumb title="小技巧" url="https://sukeyang.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://sukeyang.github.io/2017/09/08/%E4%BF%AE%E6%94%B9ios%E6%B5%8B%E8%AF%95%E6%89%93%E5%8C%85-icon/</loc>
-    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>修改ios测试打包 icon</title>
-        <pubTime>2017-09-08T06:17:25.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
           
         </display>
     </data>
@@ -512,12 +422,66 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2017/02/10/xuejs2/</loc>
-    <lastmod>2017-06-29T11:58:40.000Z</lastmod>
+    <loc>https://sukeyang.github.io/2017/09/08/%E4%BF%AE%E6%94%B9ios%E6%B5%8B%E8%AF%95%E6%89%93%E5%8C%85-icon/</loc>
+    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
     <data>
         <display>
-        <title>js基本用法(二)</title>
-        <pubTime>2017-02-10T10:12:03.000Z</pubTime>
+        <title>修改ios测试打包 icon</title>
+        <pubTime>2017-09-08T06:17:25.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2016/06/04/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>GitHub + Hexo 搭建博客总结(一)</title>
+        <pubTime>2016-06-04T08:40:33.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2017/06/30/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>常用软件配置同步</title>
+        <pubTime>2017-06-30T02:27:14.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="技巧" url="https://sukeyang.github.io/categories/%E6%8A%80%E5%B7%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2017/02/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>数据库知识</title>
+        <pubTime>2017-02-13T09:52:01.000Z</pubTime>
         
          
            
@@ -530,12 +494,12 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2017/02/10/xuejs1/</loc>
-    <lastmod>2017-06-29T11:58:40.000Z</lastmod>
+    <loc>https://sukeyang.github.io/2017/08/08/andriod%E6%89%93%E5%8C%85%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
     <data>
         <display>
-        <title>js基本用法(一)</title>
-        <pubTime>2017-02-10T10:12:00.000Z</pubTime>
+        <title>andriod打包相关</title>
+        <pubTime>2017-08-08T03:34:21.000Z</pubTime>
         
          
            
@@ -548,17 +512,17 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2016/07/03/%E9%83%A8%E5%88%86App%E6%9B%B4%E6%96%B0%E6%97%A0%E6%B3%95%E8%81%94%E7%BD%91/</loc>
-    <lastmod>2017-06-29T11:58:40.000Z</lastmod>
+    <loc>https://sukeyang.github.io/2016/12/18/%E6%96%90%E8%AE%AFk2%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-05-05T18:11:42.000Z</lastmod>
     <data>
         <display>
-        <title>升级iOS10后，部分App更新之后无法联网怎么办？</title>
-        <pubTime>2016-07-03T04:00:58.000Z</pubTime>
+        <title>斐讯k2路由器刷华硕固件</title>
+        <pubTime>2016-12-18T07:36:25.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="iphone" url="https://sukeyang.github.io/categories/iphone/"/>
+              <breadCrumb title="小技巧" url="https://sukeyang.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
           
         </display>
     </data>
@@ -584,17 +548,17 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2016/10/01/UIAlertView%E4%B8%8D%E6%B6%88%E5%A4%B1/</loc>
+    <loc>https://sukeyang.github.io/2017/02/10/xuejs1/</loc>
     <lastmod>2017-06-29T11:58:40.000Z</lastmod>
     <data>
         <display>
-        <title>iOS 9 - Keyboard 出现在 UIAlertView 不消失</title>
-        <pubTime>2016-10-01T09:56:13.000Z</pubTime>
+        <title>js基本用法(一)</title>
+        <pubTime>2017-02-10T10:12:00.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="ios" url="https://sukeyang.github.io/categories/ios/"/>
+              <breadCrumb title="js" url="https://sukeyang.github.io/categories/js/"/>
           
         </display>
     </data>
@@ -620,12 +584,66 @@
 
     
   <url>
+    <loc>https://sukeyang.github.io/2016/07/03/%E9%83%A8%E5%88%86App%E6%9B%B4%E6%96%B0%E6%97%A0%E6%B3%95%E8%81%94%E7%BD%91/</loc>
+    <lastmod>2017-06-29T11:58:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>升级iOS10后，部分App更新之后无法联网怎么办？</title>
+        <pubTime>2016-07-03T04:00:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="iphone" url="https://sukeyang.github.io/categories/iphone/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://sukeyang.github.io/2016/09/06/Link%20Binary%20With/</loc>
     <lastmod>2017-06-29T11:58:40.000Z</lastmod>
     <data>
         <display>
         <title>Xcode中Link Binary With Libraries Status Required or Optional</title>
         <pubTime>2016-09-06T04:00:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="ios" url="https://sukeyang.github.io/categories/ios/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2017/02/10/xuejs2/</loc>
+    <lastmod>2017-06-29T11:58:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>js基本用法(二)</title>
+        <pubTime>2017-02-10T10:12:03.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="js" url="https://sukeyang.github.io/categories/js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2016/10/01/UIAlertView%E4%B8%8D%E6%B6%88%E5%A4%B1/</loc>
+    <lastmod>2017-06-29T11:58:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>iOS 9 - Keyboard 出现在 UIAlertView 不消失</title>
+        <pubTime>2016-10-01T09:56:13.000Z</pubTime>
         
          
            
@@ -676,24 +694,6 @@
 
     
   <url>
-    <loc>https://sukeyang.github.io/2016/12/01/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1Carthage%E6%94%AF%E6%8C%81%E7%9A%84%E5%BA%93/</loc>
-    <lastmod>2017-02-27T12:31:10.000Z</lastmod>
-    <data>
-        <display>
-        <title>创建自己Carthage支持的库(二)</title>
-        <pubTime>2016-12-01T09:34:32.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://sukeyang.github.io/2016/08/27/cocopod%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/</loc>
     <lastmod>2017-02-27T12:31:10.000Z</lastmod>
     <data>
@@ -723,6 +723,24 @@
            
              
               <breadCrumb title="原理" url="https://sukeyang.github.io/categories/%E5%8E%9F%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://sukeyang.github.io/2016/12/01/%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1Carthage%E6%94%AF%E6%8C%81%E7%9A%84%E5%BA%93/</loc>
+    <lastmod>2017-02-27T12:31:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>创建自己Carthage支持的库(二)</title>
+        <pubTime>2016-12-01T09:34:32.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="tools" url="https://sukeyang.github.io/categories/tools/"/>
           
         </display>
     </data>

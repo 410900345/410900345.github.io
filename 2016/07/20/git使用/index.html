@@ -105,17 +105,17 @@
 
 
 
-<meta name="description" content="ssh-key的作用我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。 解决本地多个ssh-key的配置1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件 12ssh-keygen -t rsa -f ~/.ssh/id_rsa.work -C &quot;Key for Work&quot;  ssh-">
+<meta name="description" content="常用命令ssh-key的作用我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。 解决本地多个ssh-key的配置1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件 12ssh-keygen -t rsa -f ~/.ssh/id_rsa.work -C &quot;Key for Work&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git使用技巧">
 <meta property="og:url" content="https://sukeyang.github.io/2016/07/20/git使用/index.html">
 <meta property="og:site_name" content="SukeYang的博客">
-<meta property="og:description" content="ssh-key的作用我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。 解决本地多个ssh-key的配置1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件 12ssh-keygen -t rsa -f ~/.ssh/id_rsa.work -C &quot;Key for Work&quot;  ssh-">
+<meta property="og:description" content="常用命令ssh-key的作用我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。 解决本地多个ssh-key的配置1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件 12ssh-keygen -t rsa -f ~/.ssh/id_rsa.work -C &quot;Key for Work&quot;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-05T18:11:42.000Z">
+<meta property="og:updated_time" content="2018-07-21T04:57:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用技巧">
-<meta name="twitter:description" content="ssh-key的作用我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。 解决本地多个ssh-key的配置1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件 12ssh-keygen -t rsa -f ~/.ssh/id_rsa.work -C &quot;Key for Work&quot;  ssh-">
+<meta name="twitter:description" content="常用命令ssh-key的作用我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。 解决本地多个ssh-key的配置1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件 12ssh-keygen -t rsa -f ~/.ssh/id_rsa.work -C &quot;Key for Work&quot;">
 
 
 
@@ -432,7 +432,7 @@
       
 
       
-        <h2 id="ssh-key的作用"><a href="#ssh-key的作用" class="headerlink" title="ssh-key的作用"></a>ssh-key的作用</h2><p>我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，<br>也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。</p>
+        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h2 id="ssh-key的作用"><a href="#ssh-key的作用" class="headerlink" title="ssh-key的作用"></a>ssh-key的作用</h2><p>我们使用ssh登录服务器时，一般常见的会使用用户名/密码方式登录，<br>也可以使用ssh key实行免密码登录，一般现在这种方式被Git服务器使用的比较多。</p>
 <h2 id="解决本地多个ssh-key的配置"><a href="#解决本地多个ssh-key的配置" class="headerlink" title="解决本地多个ssh-key的配置"></a>解决本地多个ssh-key的配置</h2><p>1.生成不同的密钥,ssh会根据登陆不同的域来读取相应的私钥文件</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.work</span> -C <span class="string">"Key for Work"</span>  </span><br><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa<span class="selector-class">.github</span> -C <span class="string">"Key for GitHub"</span></span><br></pre></td></tr></table></figure>
 <p>在 <code>~/.ssh/config</code> 目录内修改文件config</p>
@@ -605,7 +605,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -697,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh-key的作用"><span class="nav-number">1.</span> <span class="nav-text">ssh-key的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决本地多个ssh-key的配置"><span class="nav-number">2.</span> <span class="nav-text">解决本地多个ssh-key的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误收集"><span class="nav-number">3.</span> <span class="nav-text">错误收集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ssh-“permissions-are-too-open”-error"><span class="nav-number">3.1.</span> <span class="nav-text">1.ssh “permissions are too open” error</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">1.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh-key的作用"><span class="nav-number">2.</span> <span class="nav-text">ssh-key的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决本地多个ssh-key的配置"><span class="nav-number">3.</span> <span class="nav-text">解决本地多个ssh-key的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误收集"><span class="nav-number">4.</span> <span class="nav-text">错误收集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ssh-“permissions-are-too-open”-error"><span class="nav-number">4.1.</span> <span class="nav-text">1.ssh “permissions are too open” error</span></a></li></ol></li></ol></div>
             
 
           </div>
