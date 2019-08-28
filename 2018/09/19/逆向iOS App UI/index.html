@@ -98,7 +98,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="SukeYang的博客" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="sukeyang的博客" type="application/atom+xml" />
 
 
 
@@ -109,18 +109,13 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="逆向iOS App UI">
 <meta property="og:url" content="https://sukeyang.github.io/2018/09/19/逆向iOS App UI/index.html">
-<meta property="og:site_name" content="SukeYang的博客">
+<meta property="og:site_name" content="sukeyang的博客">
 <meta property="og:description" content="环境准备 iOS8.4越狱手机 iphone5s.版本不能太高，检查手机是否可以越狱http://jailbreak.25pp.com/ios. Reveal版本：Reveal4破解版,下载地址 盘古越狱助手 win,下载,还有 pp 助手之类的越狱工具,越狱教程  操作步骤 在Cydia中搜索并安装Reveal Loader,下载安装  在Reveal Help-&amp;gt;Show Reveal">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xooko.com1.z0.glb.clouddn.com/2016-07-27-Snip20160727_11.png">
-<meta property="og:image" content="http://7xooko.com1.z0.glb.clouddn.com/reveal/show-reveal-library-in-finder.jpg">
-<meta property="og:image" content="http://7xooko.com1.z0.glb.clouddn.com/2016-07-27-Snip20160727_8.png">
-<meta property="og:image" content="http://7xooko.com1.z0.glb.clouddn.com/2016-07-27-Snip20160727_10.png">
-<meta property="og:updated_time" content="2019-08-27T15:58:22.498Z">
+<meta property="og:updated_time" content="2019-08-28T17:12:15.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="逆向iOS App UI">
 <meta name="twitter:description" content="环境准备 iOS8.4越狱手机 iphone5s.版本不能太高，检查手机是否可以越狱http://jailbreak.25pp.com/ios. Reveal版本：Reveal4破解版,下载地址 盘古越狱助手 win,下载,还有 pp 助手之类的越狱工具,越狱教程  操作步骤 在Cydia中搜索并安装Reveal Loader,下载安装  在Reveal Help-&amp;gt;Show Reveal">
-<meta name="twitter:image" content="http://7xooko.com1.z0.glb.clouddn.com/2016-07-27-Snip20160727_11.png">
 
 
 
@@ -156,7 +151,7 @@
 
 
 
-  <title>逆向iOS App UI | SukeYang的博客</title>
+  <title>逆向iOS App UI | sukeyang的博客</title>
   
 
 
@@ -186,7 +181,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">SukeYang的博客</span>
+        <span class="site-title">sukeyang的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -340,13 +335,13 @@
     <link itemprop="mainEntityOfPage" href="https://sukeyang.github.io/2018/09/19/逆向iOS App UI/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="SukeYang">
+      <meta itemprop="name" content="sukeyang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/author.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SukeYang的博客">
+      <meta itemprop="name" content="sukeyang的博客">
     </span>
 
     
@@ -443,15 +438,15 @@
 <li>盘古越狱助手 win,<a href="http://www.pangu.io/" target="_blank" rel="noopener">下载</a>,还有 pp 助手之类的越狱工具,<a href="http://jailbreak.25pp.com/ppjailbreak/?from=25pp_00119" target="_blank" rel="noopener">越狱教程</a></li>
 </ul>
 <h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ul>
-<li><p>在Cydia中搜索并安装Reveal Loader,下载安装<br><img src="http://7xooko.com1.z0.glb.clouddn.com/2016-07-27-Snip20160727_11.png" alt=""></p>
+<li><p>在Cydia中搜索并安装Reveal Loader,下载安装</p>
 </li>
-<li><p>在Reveal Help-&gt;Show Reveal Library in Finder-&gt;ios Library找到RevealServer.framework，然后打开RevealServer.framework找到里面的RevealServer文件,拷贝到外面修改名字为<code>libReveal.dylib</code><br><img src="http://7xooko.com1.z0.glb.clouddn.com/reveal/show-reveal-library-in-finder.jpg" alt=""></p>
+<li><p>在Reveal Help-&gt;Show Reveal Library in Finder-&gt;ios Library找到RevealServer.framework，然后打开RevealServer.framework找到里面的RevealServer文件,拷贝到外面修改名字为<code>libReveal.dylib</code></p>
 </li>
 <li><p>下载 pp 助手,工具-&gt;设备(5s)-&gt;文件管理-&gt;文件系统-&gt; Library-&gt; RHRevealLoader,没有的话新建一个<code>RHRevealLoader</code>文件夹,拷贝上的<code>libReveal.dylib</code>到这个<code>RHRevealLoader</code>目录下</p>
 </li>
-<li><p>重启手机，关闭电脑的Reveal重新打开。然后在手机-&gt;设置-&gt;Reveal-&gt;Enabled Applications-&gt;微信,里面打开你需要调试的APP，然后打开对应的APP就可以进行UI调<br><img src="http://7xooko.com1.z0.glb.clouddn.com/2016-07-27-Snip20160727_8.png" alt=""></p>
+<li><p>重启手机，关闭电脑的Reveal重新打开。然后在手机-&gt;设置-&gt;Reveal-&gt;Enabled Applications-&gt;微信,里面打开你需要调试的APP，然后打开对应的APP就可以进行UI调</p>
 </li>
-<li><p>打开Reveal显示出来正在调试的 app, 就可以查看页面内容了<br><img src="http://7xooko.com1.z0.glb.clouddn.com/2016-07-27-Snip20160727_10.png" alt=""></p>
+<li><p>打开Reveal显示出来正在调试的 app, 就可以查看页面内容了</p>
 </li>
 </ul>
 <h3 id="在Cydia中安装OpenSSH工具"><a href="#在Cydia中安装OpenSSH工具" class="headerlink" title="在Cydia中安装OpenSSH工具,"></a>在Cydia中安装OpenSSH工具,</h3><p>USB连接步骤:</p>
@@ -469,7 +464,7 @@
 <p><a href="http://chaosky.me/2016/07/27/iOS-Security-Defense-Reveal/" target="_blank" rel="noopener">使用Reveal分析别人App的UI布局</a></p>
 <p><a href="https://www.jianshu.com/p/bf69cefc5f39" target="_blank" rel="noopener">SSH连接iPhone(Wifi和USB)</a></p>
 <p><a href="https://www.jianshu.com/p/c93f5c3f1c7a" target="_blank" rel="noopener">Cycript使用简介</a></p>
-<!--<img title="配置" alt="preferrence" class="class1 class2" src="http://oscmg6lez.bkt.clouddn.com/static/images/alfred.png?imageView2/2/w/1400">–&gt;-->
+
       
     </div>
     
@@ -597,9 +592,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/author.jpg"
-                alt="SukeYang" />
+                alt="sukeyang" />
             
-              <p class="site-author-name" itemprop="name">SukeYang</p>
+              <p class="site-author-name" itemprop="name">sukeyang</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -726,7 +721,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">SukeYang</span>
+  <span class="author" itemprop="copyrightHolder">sukeyang</span>
 
   
 </div>

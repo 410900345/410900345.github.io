@@ -27,7 +27,7 @@
   <entry>
     <title><![CDATA[新mac 环境配置]]></title>
     <url>%2F2018%2F05%2F04%2F%E6%96%B0mac%2Cruby%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[ruby 环境配置rvmRVM : Ruby Version Manager, Ruby版本管理器,包括Ruby的版本管理和Gem库管理(gemset). 123$ curl -L get.rvm.io | bash -s stable# 或者$ bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer) 配置环境变量~/.bash_profile 配置淘宝镜像地址 1https://ruby-china.org/wiki/rvm-guide]]></content>
+    <content type="text"><![CDATA[ruby 环境配置rvmRVM : Ruby Version Manager, Ruby版本管理器,包括Ruby的版本管理和Gem库管理(gemset). 123$ curl -L get.rvm.io | bash -s stable# 或者$ bash -s stable &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer) 配置环境变量~/.bash_profile 配置淘宝镜像地址 1https://ruby-china.org/wiki/rvm-guide 参考地址]]></content>
       <categories>
         <category>ios,技巧,tools,js,原理,iphone,小技巧&lt;!--选一个--&gt;</category>
       </categories>
@@ -41,17 +41,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[2017总结]]></title>
-    <url>%2F2018%2F04%2F11%2F2017%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[2017年1.微信小程序只是看了文档和注册了,并没有实现相应的 demo 项目. 2.减肥的工作没有实现. 3.ppt分享没有实现. 2018年1.微信小程序现相应的 demo 项目,写过毕竟要更加深刻理解,趣厨房 2.减肥的工作继续. 3.分享没有实现,继续努力. 4.用 swift 和 rac 实现 demo. 5.继续研究相关的题目,总结相关的知识点,深挖原理性东西,保持竞争力.llvm 方向的研究 6.LeetCode 相关内容 好的内容https://lrh1993.gitbooks.io/android_interview_guide/content/https://github.com/ming1016/study 书单《程序员的自我修养》 《iOS 应用逆向工程》 《macOS软件安全与逆向分析》 深入解析Mac OS X &amp; iOS操作系统： 《Swifter - Swift 必备 Tips》]]></content>
+    <title><![CDATA[2018总结]]></title>
+    <url>%2F2018%2F04%2F11%2F2018%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[一.2018年1.换了工作去了个大公司,去习惯里面的工作模式,适应里面的工作模式.大公司很多分工协作比较成熟,不会像是小公司有推倒重来的情况.小公司转身比较快,但是很难找到真正实现收益的道路 2.减肥的工作没有实现. 3.ppt分享没有实现. 4.使用rn开发了一块app,虽然实现了双端,但是体验并不是很理想,后来用iOS 重写了一端的代码. 二.2019年1.LeetCode 相关内容 三.好的内容https://lrh1993.gitbooks.io/android_interview_guide/content/https://github.com/ming1016/study 四.书单《程序员的自我修养》 《iOS 应用逆向工程》 《macOS软件安全与逆向分析》 深入解析Mac OS X &amp; iOS操作系统： 《Swifter - Swift 必备 Tips》 五.安卓上的一些开发者平台,上传app相关内容 360应用开放平台 小米开放平台 安智开发者联盟 百度开发者平台 木蚂蚁开发者联盟 阿里应用分发开放平台]]></content>
       <categories>
         <category>小技巧</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[2018总结]]></title>
-    <url>%2F2018%2F04%2F11%2F2018%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[一.2018年1.换了工作去了个大公司,去习惯里面的工作模式,适应里面的工作模式.大公司很多分工协作比较成熟,不会像是小公司有推倒重来的情况.小公司转身比较快,但是很难找到真正实现收益的道路 2.减肥的工作没有实现. 3.ppt分享没有实现. 4.使用rn开发了一块app,虽然实现了双端,但是体验并不是很理想,后来用iOS 重写了一端的代码. 二.2019年1.LeetCode 相关内容 三.好的内容https://lrh1993.gitbooks.io/android_interview_guide/content/https://github.com/ming1016/study 四.书单《程序员的自我修养》 《iOS 应用逆向工程》 《macOS软件安全与逆向分析》 深入解析Mac OS X &amp; iOS操作系统： 《Swifter - Swift 必备 Tips》 五.安卓上的一些开发者平台,上传app相关内容 360应用开放平台 小米开放平台 安智开发者联盟 百度开发者平台 木蚂蚁开发者联盟 阿里应用分发开放平台]]></content>
+    <title><![CDATA[2017总结]]></title>
+    <url>%2F2018%2F04%2F11%2F2017%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[2017年1.微信小程序只是看了文档和注册了,并没有实现相应的 demo 项目. 2.减肥的工作没有实现. 3.ppt分享没有实现. 2018年1.微信小程序现相应的 demo 项目,写过毕竟要更加深刻理解,趣厨房 2.减肥的工作继续. 3.分享没有实现,继续努力. 4.用 swift 和 rac 实现 demo. 5.继续研究相关的题目,总结相关的知识点,深挖原理性东西,保持竞争力.llvm 方向的研究 6.LeetCode 相关内容 好的内容https://lrh1993.gitbooks.io/android_interview_guide/content/https://github.com/ming1016/study 书单《程序员的自我修养》 《iOS 应用逆向工程》 《macOS软件安全与逆向分析》 深入解析Mac OS X &amp; iOS操作系统： 《Swifter - Swift 必备 Tips》]]></content>
       <categories>
         <category>小技巧</category>
       </categories>
@@ -193,9 +193,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[数据库知识]]></title>
-    <url>%2F2017%2F02%2F13%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%2F</url>
-    <content type="text"><![CDATA[1.’主键和唯一索引’; 主键是一种约束，唯一索引是一种索引，两者在本质上是不同的。 主键创建后一定包含一个唯一性索引，唯一性索引并不一定就是主键。 唯一性索引列允许空值，而主键列不允许为空值。 主键列在创建时，已经默认为空值 + 唯一索引了。 主键可以被其他表引用为外键，而唯一索引不能。 一个表最多只能创建一个主键，但可以创建多个唯一索引。主键更适合那些不容易更改的唯一标识，如自动递增列、身份证号等。]]></content>
+    <title><![CDATA[js基本用法(三)]]></title>
+    <url>%2F2017%2F02%2F13%2Fxuejs3%2F</url>
+    <content type="text"><![CDATA[继承1.js没有类的概念,只有对象,就是继承也是通过对象的方式;constructor类似于类初始化函数,prototype 是个类的对象;2.保持原型链路的基础上,对父类对象的属性隔离;保证重用; var F = function(){}; F.prototype = TwoShape.prototype; Triangle.prototype = new F(); 3.将uber属性设置成了指向其父级原型的引用; my.uber = TwoShape.prototype; 4.继承函数封装,具体原理不懂; function extend(Child,Parent) { var F = function(){}; F.prototype = Parent.prototype; Child.prototype = new F; Child.prototype.constructor = Child; Child.uber = Parent.prototype; extend(TwoShape,shape);//使用内容 属性的拷贝为自身的,基本数据类型是创建新的,函数和数组都是值的引用;新创建相当于忘记之前的对象,重新生成一个对象; function extend2(Child, Parent) { var p = Parent.prototype; var c = Child.prototype; for (var i in p ){ c[i] = p[i]; c.uber = p; } } prototype是什么含义？javascript中的每个对象都有prototype属性，Javascript中对象的prototype属性的解释是：返回对象类型原型的引用。A.prototype = new B();理解prototype不应把它和继承混淆。A的prototype为B的一个实例，可以理解A将B中的方法和属性全部克隆了一遍。A能使用B的方法和属性。这里强调的是克隆而不是继承。可以出现这种情况：A的prototype是B的实例，同时B的prototype也是A的实例。 DOM环境1.访问标签,计时器,修改样式等 1234567var inputs = document.getElementsByTagName('button');function toggle ()&#123; var st = inputs[0].style; inputs[0].style.visibility = (st.visibility == "hidden")?"visible":"hidden";&#125;var myint = setInterval(toggle,1000);clearInterval(myint); 2.创建添加节点 1234var myp = document.createElement("p");myp.innerHTML = "yet another";myp.style.border = "2px dotted blue";document.body.appendChild(myp) 3.插入节点,删除节点 12document.body.insertBefore(p,document.body.firstChild)document.body.removeChild(myp) 4.其他常用方法 12document.title ="123"; //不改变实际标签内容document.cookie; 5.捕捉法和冒泡法]]></content>
       <categories>
         <category>js</category>
       </categories>
@@ -209,9 +209,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[js基本用法(三)]]></title>
-    <url>%2F2017%2F02%2F13%2Fxuejs3%2F</url>
-    <content type="text"><![CDATA[继承1.js没有类的概念,只有对象,就是继承也是通过对象的方式;constructor类似于类初始化函数,prototype 是个类的对象;2.保持原型链路的基础上,对父类对象的属性隔离;保证重用; var F = function(){}; F.prototype = TwoShape.prototype; Triangle.prototype = new F(); 3.将uber属性设置成了指向其父级原型的引用; my.uber = TwoShape.prototype; 4.继承函数封装,具体原理不懂; function extend(Child,Parent) { var F = function(){}; F.prototype = Parent.prototype; Child.prototype = new F; Child.prototype.constructor = Child; Child.uber = Parent.prototype; extend(TwoShape,shape);//使用内容 属性的拷贝为自身的,基本数据类型是创建新的,函数和数组都是值的引用;新创建相当于忘记之前的对象,重新生成一个对象; function extend2(Child, Parent) { var p = Parent.prototype; var c = Child.prototype; for (var i in p ){ c[i] = p[i]; c.uber = p; } } prototype是什么含义？javascript中的每个对象都有prototype属性，Javascript中对象的prototype属性的解释是：返回对象类型原型的引用。A.prototype = new B();理解prototype不应把它和继承混淆。A的prototype为B的一个实例，可以理解A将B中的方法和属性全部克隆了一遍。A能使用B的方法和属性。这里强调的是克隆而不是继承。可以出现这种情况：A的prototype是B的实例，同时B的prototype也是A的实例。 DOM环境1.访问标签,计时器,修改样式等 1234567var inputs = document.getElementsByTagName('button');function toggle ()&#123; var st = inputs[0].style; inputs[0].style.visibility = (st.visibility == "hidden")?"visible":"hidden";&#125;var myint = setInterval(toggle,1000);clearInterval(myint); 2.创建添加节点 1234var myp = document.createElement("p");myp.innerHTML = "yet another";myp.style.border = "2px dotted blue";document.body.appendChild(myp) 3.插入节点,删除节点 12document.body.insertBefore(p,document.body.firstChild)document.body.removeChild(myp) 4.其他常用方法 12document.title ="123"; //不改变实际标签内容document.cookie; 5.捕捉法和冒泡法]]></content>
+    <title><![CDATA[数据库知识]]></title>
+    <url>%2F2017%2F02%2F13%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3%2F</url>
+    <content type="text"><![CDATA[1.’主键和唯一索引’; 主键是一种约束，唯一索引是一种索引，两者在本质上是不同的。 主键创建后一定包含一个唯一性索引，唯一性索引并不一定就是主键。 唯一性索引列允许空值，而主键列不允许为空值。 主键列在创建时，已经默认为空值 + 唯一索引了。 主键可以被其他表引用为外键，而唯一索引不能。 一个表最多只能创建一个主键，但可以创建多个唯一索引。主键更适合那些不容易更改的唯一标识，如自动递增列、身份证号等。]]></content>
       <categories>
         <category>js</category>
       </categories>
@@ -241,19 +241,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[斐讯k2路由器刷华硕固件]]></title>
-    <url>%2F2016%2F12%2F18%2F%E6%96%90%E8%AE%AFk2%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[1.下载软件需要安装的软件,网盘地址https://pan.baidu.com/s/1c2J6CnQ里面有k2_163_v11_breed.bin 和SW_K2_703004657_V22.4.2.8.bin，然后升级进入斐讯路由器选择升级，选择k2_163_v11_breed.bin这个文件，等待升级完成 2.升级完成后，断开路由器电源然后按住复位键，插上电源，按住等待7秒钟，然后在浏览上输入：192.168.1.1 3.进入breed web设置页面，先在breed“环境变量设置”中改为“禁用”然后保存，并重启路由器。然后回到breed界面，在菜单固件更新中，选择固件哪行，上传已经下载的SW_K2_703004657_V22.4.2.8.bin 固件，等待上传完成，然后点击更新。请等待升级完成，自动重启后。然后按住复位键7秒，等待重启后。到此你的路由器固件成功降级到了22.4.2.8 4.同时可以刷最新华硕固件:在步骤3中的breed界面,下载下面的固件进行升级.不使用上面压缩包里面的固件.最新华硕固件: 链接:http://pan.baidu.com/s/1geZnaz5 密码: mdex 123456华硕固件默认配置旧固件网关：192.168.1.1新固件网关：192.168.123.1管理页面：http://my.router/管理账号：admin/adminwifi:1234567890 刷机不恢复默认值潘多拉固件：链接: http://pan.baidu.com/s/1nvKy4mX 密码: w5p7账号/密码 ： root/admin 参考地址1 参考地址2 参考地址3]]></content>
-      <categories>
-        <category>小技巧</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[使用Sublime Text 进行Markdown 编辑]]></title>
     <url>%2F2016%2F12%2F18%2F%E4%BD%BF%E7%94%A8SublimeText%E8%BF%9B%E8%A1%8CMarkdown%E7%BC%96%E8%BE%91%2F</url>
     <content type="text"><![CDATA[安装包管理器同时按下ctrl+”`”,将会在窗口底部出现一个小控制台，下面代码粘贴到控制台的编辑栏里： 1import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read()) 安装不上的问题，看官方办法 安装我们要用到的插件12Markdown Editing // Markdown编辑和语法高亮支持 Markdown Preview// Markdown导出html预览支持 插件配置1.在设置里面Sublime Text – &gt;preference–&gt; key bunding user 输入 123[ &#123;"keys": ["alt+r"], "command": "markdown_preview", "args": &#123; "target": "browser"&#125;&#125;] 然后按住alt + r ，预览你编辑的文件吧。]]></content>
       <categories>
         <category>tools</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[斐讯k2路由器刷华硕固件]]></title>
+    <url>%2F2016%2F12%2F18%2F%E6%96%90%E8%AE%AFk2%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[1.下载软件需要安装的软件,网盘地址https://pan.baidu.com/s/1c2J6CnQ里面有k2_163_v11_breed.bin 和SW_K2_703004657_V22.4.2.8.bin，然后升级进入斐讯路由器选择升级，选择k2_163_v11_breed.bin这个文件，等待升级完成 2.升级完成后，断开路由器电源然后按住复位键，插上电源，按住等待7秒钟，然后在浏览上输入：192.168.1.1 3.进入breed web设置页面，先在breed“环境变量设置”中改为“禁用”然后保存，并重启路由器。然后回到breed界面，在菜单固件更新中，选择固件哪行，上传已经下载的SW_K2_703004657_V22.4.2.8.bin 固件，等待上传完成，然后点击更新。请等待升级完成，自动重启后。然后按住复位键7秒，等待重启后。到此你的路由器固件成功降级到了22.4.2.8 4.同时可以刷最新华硕固件:在步骤3中的breed界面,下载下面的固件进行升级.不使用上面压缩包里面的固件.最新华硕固件: 链接:http://pan.baidu.com/s/1geZnaz5 密码: mdex 123456华硕固件默认配置旧固件网关：192.168.1.1新固件网关：192.168.123.1管理页面：http://my.router/管理账号：admin/adminwifi:1234567890 刷机不恢复默认值潘多拉固件：链接: http://pan.baidu.com/s/1nvKy4mX 密码: w5p7账号/密码 ： root/admin 参考地址1 参考地址2 参考地址3]]></content>
+      <categories>
+        <category>小技巧</category>
       </categories>
   </entry>
   <entry>
@@ -359,7 +359,7 @@
   <entry>
     <title><![CDATA[GitHub + Hexo 搭建博客总结(二)]]></title>
     <url>%2F2016%2F06%2F07%2F%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA2%2F</url>
-    <content type="text"><![CDATA[1.创建分类建立分类文件夹 hexo new page categories xxx.md 头部写成这样 title: GitHub + Hexo 搭建博客总结(二) date: 2017-02-07 17:34:35 tags: categories: tools 2.底部统计安装脚本（必选）,参考链接打开themes/你的主题/layout/_partial/footer.pejs添加如下脚本即可。 &lt;script async src=&quot;https://dn-lbstatics.qbox.me/ busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt; &lt;/script&gt; 3.为Hexo 添加 Swiftype 站内搜索1.去 Swiftype官网注册好账号，然后点击 Create Engine，输入网址并填好名称，配置好后 Swiftype 会自动开始抓取网站数据，点击 Manage 下面的 Content ，就能看到抓取到的网站数据。2.打开 Hexo 主题配置，以 jacman 为例，打开 jacman 目录下的 _config.yml 文件，在末尾添加 swift_search: ## https://swiftype.com/ enable: true id: ## 这里填写前面记下的 Swiftype id 3.替换文件,在到 jacman\layout\/_partial 目录，打开 header.ejs 这个文件 12345&lt;% &#125; else if(theme.baidu_search.enable)&#123; %&gt;&lt;form class="search" action="&lt;%- theme.baidu_search.site %&gt;" target="_blank"&gt;&lt;label&gt;Search&lt;/label&gt;&lt;input name="s" type="hidden" value= &lt;%= theme.baidu_search.id %&gt; &gt;&lt;input type="text" name="q" size="30" placeholder="&lt;%= __('search') %&gt;"&gt;&lt;br&gt;&lt;/form&gt; 在这段代码后边添加 12345&lt;% &#125; else if(theme.swift_search.enable)&#123; %&gt;&lt;form class="search" action="&lt;%- config.root %&gt;search/index.html" method="get" accept-charset="utf-8"&gt;&lt;label&gt;Search&lt;/label&gt;&lt;input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" /&gt;&lt;/form&gt; 最后在文件最后一个前添加 1234567&lt;script type="text/javascript"&gt;(function(w,d,t,u,n,s,e)&#123;w['SwiftypeObject']=n;w[n]=w[n]||function()&#123;(w[n].q=w[n].q||[]).push(arguments);&#125;;s=d.createElement(t);e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);&#125;)(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');_st('install','Zo1mzEpQeR6Xjr3hz4jd','2.0.0');&lt;/script&gt; 4.图片处理用七牛为 Hexo 存储图片链接 5.开启统计hexo安装统计插件,链接 6.首页文章展示摘要该主题首页文章列表默认是全部展开，感觉不好，我关闭掉了，只展示少量摘要。修改\themes\jacman下面_config.yml中的expand改成false即可 123index: expand: false ## default is unexpanding,so you can only see the short description of each post. excerpt_link: Read More 7.配置模板文章我们可以修改根目录下\scaffolds\post.md文件，配置好基本的信息，比如： 1234title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;categories: tools 8.代码显示不全等问题用下面方式避免,官网说明,链接 123&#123;% codeblock lang:objc %&#125;[rectangle setX: 10 y: 10 width: 20 height: 20];&#123;% endcodeblock %&#125; 9.编写脚本执行的命令-bash: hexo: command not found解决办法,编写shell 脚本,执行下面命令,自动部署,确保路径正确; 123/usr/local/bin/node /usr/local/lib/node_modules/hexo-cli/bin/hexo clean;/usr/local/bin/node /usr/local/lib/node_modules/hexo-cli/bin/hexo g; /usr/local/bin/node /usr/local/lib/node_modules/hexo-cli/bin/hexo d;]]></content>
+    <content type="text"><![CDATA[1.创建分类建立分类文件夹 hexo new page categories xxx.md 头部写成这样 title: GitHub + Hexo 搭建博客总结(二) date: 2017-02-07 17:34:35 tags: categories: tools 2.底部统计安装脚本（必选）,参考链接打开themes/你的主题/layout/_partial/footer.pejs添加如下脚本即可。 &lt;script async src=&quot;https://dn-lbstatics.qbox.me/ busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt; &lt;/script&gt; 3.为Hexo 添加 Swiftype 站内搜索1.去 Swiftype官网注册好账号，然后点击 Create Engine，输入网址并填好名称，配置好后 Swiftype 会自动开始抓取网站数据，点击 Manage 下面的 Content ，就能看到抓取到的网站数据。2.打开 Hexo 主题配置，以 jacman 为例，打开 jacman 目录下的 _config.yml 文件，在末尾添加 swift_search: ## https://swiftype.com/ enable: true id: ## 这里填写前面记下的 Swiftype id 3.替换文件,在到 jacman\layout\/_partial 目录，打开 header.ejs 这个文件 12345&lt;% &#125; else if(theme.baidu_search.enable)&#123; %&gt;&lt;form class="search" action="&lt;%- theme.baidu_search.site %&gt;" target="_blank"&gt;&lt;label&gt;Search&lt;/label&gt;&lt;input name="s" type="hidden" value= &lt;%= theme.baidu_search.id %&gt; &gt;&lt;input type="text" name="q" size="30" placeholder="&lt;%= __('search') %&gt;"&gt;&lt;br&gt;&lt;/form&gt; 在这段代码后边添加 12345&lt;% &#125; else if(theme.swift_search.enable)&#123; %&gt;&lt;form class="search" action="&lt;%- config.root %&gt;search/index.html" method="get" accept-charset="utf-8"&gt;&lt;label&gt;Search&lt;/label&gt;&lt;input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" /&gt;&lt;/form&gt; 最后在文件最后一个前添加 1234567&lt;script type="text/javascript"&gt;(function(w,d,t,u,n,s,e)&#123;w['SwiftypeObject']=n;w[n]=w[n]||function()&#123;(w[n].q=w[n].q||[]).push(arguments);&#125;;s=d.createElement(t);e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);&#125;)(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');_st('install','Zo1mzEpQeR6Xjr3hz4jd','2.0.0');&lt;/script&gt; 4.图片处理使用github图床和picgo方便操作,以后不用老换图床;(七牛云已经限制了个人域名,无法继续使用) 5.开启统计hexo安装统计插件,链接 6.首页文章展示摘要该主题首页文章列表默认是全部展开，感觉不好，我关闭掉了，只展示少量摘要。修改\themes\jacman下面_config.yml中的expand改成false即可 123index: expand: false ## default is unexpanding,so you can only see the short description of each post. excerpt_link: Read More 7.配置模板文章我们可以修改根目录下\scaffolds\post.md文件，配置好基本的信息，比如： 1234title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;categories: tools 8.代码显示不全等问题用下面方式避免,官网说明,链接 123&#123;% codeblock lang:objc %&#125;[rectangle setX: 10 y: 10 width: 20 height: 20];&#123;% endcodeblock %&#125; 9.编写脚本执行的命令-bash: hexo: command not found解决办法,编写shell 脚本,执行下面命令,自动部署,确保路径正确; 123/usr/local/bin/node /usr/local/lib/node_modules/hexo-cli/bin/hexo clean;/usr/local/bin/node /usr/local/lib/node_modules/hexo-cli/bin/hexo g; /usr/local/bin/node /usr/local/lib/node_modules/hexo-cli/bin/hexo d;]]></content>
       <categories>
         <category>tools</category>
       </categories>
